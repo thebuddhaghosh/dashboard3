@@ -1,0 +1,22 @@
+@use '../abstracts/variables' as *;
+.sidebar {
+  width: $sidebar-width;
+  min-height: 100vh;
+  background: $secondary;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 16px;
+
+  .nav-link {
+    color: $dark;
+    border-radius: $radius-sm;
+    margin-bottom: 0.5rem;
+
+    &.active {
+      background: $primary;
+      color: $light;
+    }
+  }
+}

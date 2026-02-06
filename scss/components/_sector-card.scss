@@ -1,0 +1,60 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+.sector-card {
+  @include card;
+  padding: 1.25rem;
+  // text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid $border-color2;
+
+  &.active {
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: $primary;
+      height: 6px;
+      width: 100%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  .grade {
+    position: absolute;
+    right: 10px;
+    background: inherit;
+    width: 30px;
+    height: 30px;
+    @include place-center;
+    border-radius: 50%;
+    top: 4px;
+    font-size: 12px;
+    font-weight: 700;
+
+    background-color: $muted;
+    &.a {
+      background-color: $success;
+      color: $white;
+    }
+    &.b {
+      background-color: $warning;
+      color: $dark;
+    }
+    &.c {
+      background-color: $danger;
+      color: $white;
+    }
+  }
+}
+
+.sector-card {
+  // min-width: 200px; /* Set consistent width */
+  // text-align: center;
+  // padding: 20px;
+  // background: #f8f9fa;
+  // border-radius: 8px;
+  // margin: 0 10px;
+}

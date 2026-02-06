@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UPCM Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet" />
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/5.0.5/css/fixedColumns.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/select/3.1.3/css/select.dataTables.min.css" />
+
+    <!-- OwlCarousel2 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./scss/main.css" />
+  </head>
+  <body>
+    <div class="layout container-fluid">
+      <!-- Topbar -->
+      <header class="header topbar">
+        <div class="header__left">UP CM DASHBOARD</div>
+
+        <div class="header__search">
+          <input type="text" class="form-control" placeholder="Search Anything..." />
+        </div>
+
+        <div class="topbar-actions d-flex align-items-center gap-4">
+          <span class="date">15 Oct, 2025</span>
+          <div class="profile d-flex align-items-center gap-2">
+            <img src="avatar.png" />
+            <span>Musfiq</span>
+          </div>
+        </div>
+      </header>
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="top-item">
+          <h5 class="mb-4">UPCM Dashboard</h5>
+          <nav class="nav flex-column">
+            <a class="nav-link active" href="#"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+            <a class="nav-link" href="#"><i class="fa-solid fa-ranking-star"></i> Leaderboard</a>
+            <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i> Orders</a>
+            <a class="nav-link" href="#"><i class="fa-solid fa-chart-line"></i> Products</a>
+            <a class="nav-link" href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+          </nav>
+        </div>
+        <div class="card">
+          <div class="card-body text-center">
+            <img src="img/applogo.png" class="img-fluid" alt="download-app" />
+            <h6 class="card-title mb-3">Darpan NexGen App</h6>
+            <p class="card-text mb-4">Get access to all you reports and information on your own phone.</p>
+            <a href="#" class="btn btn-primary btn-sm">Get App</a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <main class="main">
+        <div class="container-fluid">
+          <!-- Sector Cards -->
+          <section class="top-categories">
+            <div class="owl-carousel categories-slider">
+              <div class="item">
+                <div class="sector-card">
+                  <p>Administration</p>
+                  <span class="grade">A+</span>
+                </div>
+              </div>
+              <div class="item">
+                <div class="sector-card">
+                  <p>Agriculture</p>
+                  <span class="grade">A+</span>
+                </div>
+              </div>
+              <div class="item">
+                <div class="sector-card">
+                  <p>Education</p>
+                  <span class="grade">A+</span>
+                </div>
+              </div>
+              <div class="item">
+                <div class="sector-card">
+                  <p>Energy</p>
+                  <span class="grade">A+</span>
+                </div>
+              </div>
+              <div class="item">
+                <div class="sector-card">
+                  <p>Energy lorem</p>
+                  <span class="grade">A+</span>
+                </div>
+              </div>
+              <div class="item">
+                <div class="sector-card">
+                  <p>Tax</p>
+                  <span class="grade">A+</span>
+                </div>
+              </div>
+              <div class="item">
+                <div class="sector-card">
+                  <p>Jalshakti</p>
+                  <span class="grade">A+</span>
+                </div>
+              </div>
+              <div class="item">
+                <div class="sector-card">
+                  <p>Rural Development</p>
+                  <span class="grade">A+</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Info Card -->
+          <!-- <div class="row mb-4">
+            <div class="col-lg-8">
+              <div class="info-card">
+                <h4>Administration Sector</h4>
+                <p>Departments: 12</p>
+                <p>DQI: 60 / 60</p>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- Table -->
+          <div class="card p-3">
+            <div class="table-responsive">
+              <table id="example" class="departments-table stripe row-border order-column nowrap">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Age</th>
+                    <th>Start date</th>
+                    <th>Salary</th>
+                    <th>Extn.</th>
+                    <th>E-mail</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td>Tiger</td>
+                    <td>Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>$320,800</td>
+                    <td>5421</td>
+                    <td>n9BQe@example.com</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Garrett</td>
+                    <td>Winters</td>
+                    <td>Accountant</td>
+                    <td>Tokyo</td>
+                    <td>63</td>
+                    <td>2011/07/25</td>
+                    <td>$170,750</td>
+                    <td>8422</td>
+                    <td>NzG2T@example.com</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- jQuery (required by OwlCarousel) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script src="./js/tableData.js"></script>
+    <!-- OwlCarousel2 JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script>
+      let vpWidth = $('.layout').innerWidth();
+      console.log(vpWidth);
+      $('.categories-slider').css('max-width', vpWidth - 320 + 'px');
+      $(document).ready(function () {
+        $('.owl-carousel').owlCarousel({
+          loop: true,
+          margin: 15,
+          nav: true,
+          dots: false,
+          responsiveClass: true,
+          responsive: {
+            0: {
+              items: 1,
+              nav: true,
+            },
+            600: {
+              items: 3,
+              nav: true,
+            },
+            1000: {
+              items: 5,
+              nav: true,
+            },
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

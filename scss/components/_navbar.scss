@@ -1,0 +1,48 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+// .topbar {
+//   @include card;
+//   padding: 1rem 1.5rem;
+
+//   .search-box input {
+//     border-radius: 50px;
+//     padding-left: 2.5rem;
+//   }
+// }
+
+/* Header */
+.header {
+  grid-area: header;
+  grid-template-columns: auto 1fr auto;
+  display: grid;
+  background: #eef3ff;
+  border-radius: 16px;
+  align-items: center;
+  padding: 0 24px;
+
+  &__left {
+    font-weight: 600;
+  }
+
+  &__search input {
+    width: 100%;
+    max-width: 420px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: none;
+    outline: none;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #ddd;
+    }
+  }
+}

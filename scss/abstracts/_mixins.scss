@@ -1,0 +1,29 @@
+@use 'sass:math';
+@use '../abstracts/variables' as *;
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin card {
+  background: $light;
+  border-radius: $radius-md;
+  box-shadow: $shadow-sm;
+}
+
+@mixin truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+@mixin responsive-text($size) {
+  font-size: $size;
+  @media (max-width: 768px) {
+    font-size: math.div($size, 1.2);
+  }
+}
+@mixin place-center {
+  display: grid;
+  place-content: center;
+}

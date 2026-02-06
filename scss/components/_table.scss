@@ -1,0 +1,108 @@
+@use '../abstracts/variables' as *;
+
+.table {
+  font-size: 14px;
+  th {
+    background-color: $border-color2;
+    color: $dark;
+    font-weight: 600;
+    padding: 12px 16px;
+    text-align: left;
+  }
+}
+
+/* Custom DataTable Layout */
+.custom-datatable .top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.custom-datatable .tableTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #212529;
+}
+
+.custom-datatable .buttonsWrapper {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.custom-datatable .buttonsWrapper .dataTables_filter {
+  margin: 0;
+}
+
+.custom-datatable .buttonsWrapper .dataTables_filter input {
+  border-radius: 0.375rem;
+  border: 1px solid #ced4da;
+  padding: 0.375rem 0.75rem;
+  width: 200px;
+}
+
+.custom-datatable .tableContent {
+  margin-bottom: 1rem;
+}
+
+.custom-datatable .tableFooterBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-top: 1px solid #dee2e6;
+}
+
+.custom-datatable .left {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.custom-datatable .right {
+  margin-left: auto;
+}
+
+.custom-datatable .dataTables_paginate .paginate_button {
+  border-radius: 0.375rem;
+  margin: 0 0.125rem;
+}
+
+.custom-datatable .dataTables_wrapper .dataTables_length {
+  display: none; /* Hidden since info shows entries */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .custom-datatable .top-header,
+  .custom-datatable .tableFooterBottom {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .custom-datatable .buttonsWrapper {
+    flex-wrap: wrap;
+  }
+}
+
+// .dtsb-titleRow {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+// .dtsb-searchBuilder {
+//   padding: 14px;
+//   padding-top: 42px;
+// }
+
+// .dtb-popover-close {
+//   position: absolute;
+//   right: 10px;
+//   top: 10px;
+// }
+
+// .dtsb-group {
+//   margin-left: 0 !important;
+// }

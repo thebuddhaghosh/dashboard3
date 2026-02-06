@@ -1,0 +1,7 @@
+@use '../abstracts/variables' as *;
+.info-card {
+  background: linear-gradient(135deg, $primary, #7c83ff);
+  color: $light;
+  border-radius: $radius-lg;
+  padding: 2rem;
+}
