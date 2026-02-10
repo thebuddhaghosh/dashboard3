@@ -2,7 +2,7 @@ $(document).ready(function () {
   let myTable = $('#example').DataTable({
     // Custom DOM structure matching your exact layout
     dom: `
-      <'top-header'<'tableTitle'T><'buttonsWrapper'<'search'f><'filter'B>>
+      <'top-header mt-3'<'tableTitle'T><'buttonsWrapper'>'<'search'f><'filter'B>>
       <'tableContent'tr>
       <'tableFooterBottom'<'left'i><'right'p>>
     `,
@@ -43,25 +43,18 @@ $(document).ready(function () {
     buttons: [
       {
         extend: 'searchBuilder',
-        className: 'btn btn-sm btn-outline-info me-1',
+        className: 'btn btn-sm btn-info me-1 text-white',
         text: '<i class="fas fa-filter"></i> Filter'
       },
-   
-      // {
-      //   extend: 'csv',
-      //   className: 'btn btn-sm btn-outline-success me-1',
-      //   text: '<i class="fas fa-file-csv"></i> CSV',
-      //   filename: 'UPCM_Categories'
-      // },
-       
+          
       {
         extend: 'excel',
-        className: 'btn btn-sm btn-outline-primary me-1',
+        className: 'btn btn-sm btn-primary me-1 text-white',
         text: '<i class="fas fa-file-excel"></i> Excel'
       },
       {
         extend: 'pdf',
-        className: 'btn btn-sm btn-outline-danger',
+        className: 'btn btn-sm btn-danger text-white',
         text: '<i class="fas fa-file-pdf"></i> PDF'
       }
     ],

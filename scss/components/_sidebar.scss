@@ -20,3 +20,45 @@
     }
   }
 }
+
+.download-app-card {
+  background: $primary;
+  color: $light;
+  border-radius: $radius-md;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: -40px;
+    width: 200px;
+    height: 200px;
+    background: rgb(255 255 255 / 15%);
+    background: linear-gradient(45deg, rgb(255 255 255 / 18%) 0%, rgba(255, 255, 255, 0) 100%);
+
+    border-radius: 50%;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    bottom: -40px;
+    width: 200px;
+    height: 200px;
+    background: rgb(255 255 255 / 10%);
+    background: linear-gradient(219deg, rgb(255 255 255 / 18%) 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 50%;
+  }
+  .app-ico {
+    border-radius: 14px;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+  }
+  .card-title {
+    color: $light;
+  }
+}
