@@ -32,8 +32,8 @@
   &::after {
     content: '';
     position: absolute;
-    right: -20px;
-    top: -40px;
+    right: -40px;
+    top: -60px;
     width: 200px;
     height: 200px;
     background: rgb(255 255 255 / 15%);
@@ -44,8 +44,8 @@
   &::before {
     content: '';
     position: absolute;
-    left: -20px;
-    bottom: -40px;
+    left: -40px;
+    bottom: -80px;
     width: 200px;
     height: 200px;
     background: rgb(255 255 255 / 10%);
