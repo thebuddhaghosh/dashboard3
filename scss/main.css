@@ -211,29 +211,6 @@ td {
 .table tbody tr td .rank {
   font-weight: 700;
 }
-.table tbody tr td .progress-circle {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background: conic-gradient(#5b61f0 0% var(--dqiProgress), #e9ecef var(--dqiProgress) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.table tbody tr td .progress-circle .progress-inner {
-  width: calc(70px - 12px);
-  height: calc(70px - 12px);
-  background: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.table tbody tr td .progress-circle .progress-inner .progress-value {
-  font-weight: 600;
-  font-size: 1rem;
-  color: #000;
-}
 
 /* Custom DataTable Layout */
 .custom-datatable .top-header {
@@ -241,7 +218,6 @@ td {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
-  margin-bottom: 1rem;
   border-bottom: 1px solid #dee2e6;
 }
 .custom-datatable .tableTitle {
@@ -348,6 +324,49 @@ td {
   text-decoration: underline;
 }
 
+:root {
+  --progress-bar-width: 70px;
+  --progress-bar-height: 70px;
+  --font-size: 1rem;
+}
+
+.circular-progress {
+  width: var(--progress-bar-width);
+  height: var(--progress-bar-height);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-circle {
+  position: absolute;
+  width: calc(var(--progress-bar-width) - 16px);
+  height: calc(var(--progress-bar-height) - 16px);
+  border-radius: 50%;
+  background-color: lightgrey;
+}
+
+.percentage {
+  position: relative;
+  font-size: var(--font-size);
+  color: rgba(0, 0, 0, 0.8);
+}
+
+@media screen and (max-width: 800px) {
+  :root {
+    --progress-bar-width: 60px;
+    --progress-bar-height: 60px;
+    --font-size: 1rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  :root {
+    --progress-bar-width: 50px;
+    --progress-bar-height: 50px;
+    --font-size: 0.9rem;
+  }
+}
 .top-categories {
   width: 100%;
 }

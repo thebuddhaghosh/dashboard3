@@ -3,7 +3,7 @@ $(document).ready(function () {
     // Custom DOM structure matching your exact layout
     dom: `
       <'top-header mt-3'<'tableTitle'T><'buttonsWrapper'>'<'search'f><'filter'B>>
-      <'tableContent pb-0'tr>
+      <'tableContent mb-0'tr>
       <'tableFooterBottom'<'left'i><'right'p>>
     `,
     

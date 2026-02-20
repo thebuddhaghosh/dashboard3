@@ -170,10 +170,9 @@
                 </td>
                 <td>$320,800</td>
                 <td>
-                  <div class="progress-circle" data-progress="60" style="--dqiProgress: 60">
-                    <div class="progress-inner text-center">
-                      <div class="progress-value">60/60</div>
-                    </div>
+                  <div class="circular-progress" data-inner-circle-color="white" data-percentage="30" data-progress-color="blue" data-bg-color="grey">
+                    <div class="inner-circle"></div>
+                    <p class="percentage">0/60</p>
                   </div>
                 </td>
               </tr>
@@ -195,10 +194,9 @@
                 </td>
                 <td>$170,750</td>
                 <td>
-                  <div class="progress-circle" data-progress="30" style="--dqiProgress: 60">
-                    <div class="progress-inner text-center">
-                      <div class="progress-value">60/60</div>
-                    </div>
+                  <div class="circular-progress" data-inner-circle-color="white" data-percentage="30" data-progress-color="blue" data-bg-color="grey">
+                    <div class="inner-circle"></div>
+                    <p class="percentage">0/60</p>
                   </div>
                 </td>
               </tr>
@@ -231,6 +229,7 @@
     <!-- OwlCarousel -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="./js/tableData.js"></script>
+    <script src="./js/kpiProgress.js"></script>
     <script>
       // OwlCarousel initialization (unchanged)
       let vpWidth = $('.layout').innerWidth();

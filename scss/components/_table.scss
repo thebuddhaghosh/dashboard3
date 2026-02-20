@@ -43,35 +43,11 @@ td {
         .rank {
           font-weight: 700;
         }
-        .progress-circle {
-          width: $size;
-          height: $size;
-          border-radius: 50%;
-          background: conic-gradient($primary 0% var(--dqiProgress), $bg-ring var(--dqiProgress) 100%);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          .progress-inner {
-            width: calc(#{$size} - #{$thickness * 2});
-            height: calc(#{$size} - #{$thickness * 2});
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            .progress-value {
-              font-weight: 600;
-              font-size: 1rem;
-              color: #000;
-            }
-          }
-        }
       }
     }
   }
 }
+
 // ------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------
 
@@ -82,7 +58,7 @@ td {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
-    margin-bottom: 1rem;
+    // margin-bottom: 1rem;
     border-bottom: 1px solid #dee2e6;
   }
   .tableTitle {
