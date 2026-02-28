@@ -1,0 +1,271 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+$card-before-after: linear-gradient(192deg, rgba(255, 255, 255, 0.301) 0%, rgba(255, 255, 255, 0) 100%);
+.sector-card {
+  @include card;
+  padding: 0.5rem 1.5rem;
+  // text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid $border-color2;
+
+  &.active {
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: $primary;
+      height: 6px;
+      width: 100%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  .grade {
+    position: absolute;
+    right: 8px;
+    background: inherit;
+    width: 30px;
+    height: 30px;
+    @include place-center;
+    border-radius: 50%;
+    top: 8px;
+    font-size: 12px;
+    font-weight: 700;
+
+    background-color: $muted;
+    &.a {
+      background-color: $success;
+      color: $white;
+    }
+    &.b {
+      background-color: $warning;
+      color: $dark;
+    }
+    &.c {
+      background-color: $danger;
+      color: $white;
+    }
+  }
+
+  .icon-view {
+    max-width: 60px;
+  }
+}
+
+.selected-details {
+  .selected-sector-card {
+    background-color: $primary;
+    color: $white;
+    border: none;
+  }
+  .card {
+    padding: 1rem;
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    z-index: 9;
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      background: $card-before-after;
+      opacity: 0.5;
+      width: 10rem;
+      height: 10rem;
+      transform: scale(1.5);
+      border-radius: 50%;
+      z-index: 0;
+    }
+    &::after {
+      left: 0;
+      bottom: -120px;
+    }
+    &::before {
+      right: 0;
+      top: -70px;
+    }
+    .grade {
+      position: absolute;
+      right: 10px;
+      background: inherit;
+      width: 40px;
+      height: 40px;
+      @include place-center;
+      border-radius: 12px;
+      top: 8px;
+      font-size: 18px;
+      font-weight: 700;
+      background-color: $muted;
+      &.a {
+        background-color: $success;
+        color: $white;
+      }
+      &.b {
+        background-color: $warning;
+        color: $dark;
+      }
+      &.c {
+        background-color: $danger;
+        color: $white;
+      }
+    }
+    .title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      z-index: 9;
+    }
+    .subtitle {
+      font-size: 0.875rem;
+      margin: 0.25rem 0;
+      font-weight: 500;
+      .value {
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        text-align: center;
+        border-radius: 50%;
+        background-color: rgba($color: #ffc400, $alpha: 0.9);
+        font-weight: 700;
+      }
+    }
+    .rating-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba($color: #ffffff, $alpha: 0.1);
+      border: 1px dashed rgba($color: #ffffff, $alpha: 0.8);
+      width: fit-content;
+      padding: 0.25rem 1rem;
+      margin-top: 8px;
+      border-radius: 42px;
+      .text {
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+      .stars {
+        position: relative;
+        top: 1px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        i {
+          &.active {
+            color: $warning;
+          }
+        }
+      }
+    }
+  }
+  .count-wrapper-card {
+    .card {
+      max-width: 10rem;
+      width: 100%;
+      display: grid;
+      text-align: center;
+      place-content: center;
+      &::after,
+      &::before {
+        display: none;
+      }
+      &.grade-view-card {
+        max-width: none;
+      }
+      .title {
+        font-size: 2.25rem;
+        font-weight: 700;
+      }
+      .subtitle {
+        font-size: 1.12rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.scheme-card {
+  background-color: #fff !important;
+  border: 1px solid $border-color2 !important;
+  box-shadow: $shadow-sm !important;
+  .card-header {
+    background: transparent;
+    display: flex;
+    text-align: left;
+    padding: 0;
+    gap: 12px;
+    .title-area {
+      .title {
+        font-size: 1.15rem;
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -0.5px;
+      }
+      .duration {
+        font-size: 0.75rem;
+        margin: 0.25rem 0;
+      }
+    }
+  }
+  .card-body {
+    background: #f2f2f2;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin: 12px 6px;
+    border-radius: 8px;
+    .kpi-title {
+      font-size: 0.75rem;
+    }
+    .value-wrap {
+      font-size: 0.7rem;
+    }
+    small.value {
+      display: inline-block;
+    }
+    span.value {
+      display: inline-block;
+      font-weight: 700;
+    }
+  }
+  .card-footer {
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    max-height: 45px;
+    padding-top: 16px;
+    .circular-progress {
+      margin: 0;
+      scale: 0.6;
+    }
+    .grade {
+      position: relative !important;
+      top: unset !important;
+      right: unset !important;
+    }
+  }
+}
+.scope {
+  background-color: rgba($color: #039438, $alpha: 1);
+  color: $white;
+  border-radius: 4px;
+  width: 35px;
+  height: 35px;
+  @include place-center;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.table-view {
+  .clickable-text,
+  .kpi-text {
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  .circular-progress {
+    scale: 0.6;
+  }
+}

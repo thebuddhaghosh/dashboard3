@@ -1,7 +1,7 @@
 @use '../abstracts/variables' as *;
 .sidebar {
   width: $sidebar-width;
-  min-height: 100vh;
+  max-height: 100vh;
   background: $secondary;
   padding: 1.5rem;
   display: flex;

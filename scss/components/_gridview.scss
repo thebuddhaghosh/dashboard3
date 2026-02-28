@@ -1,0 +1,45 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.grid-view {
+  .card {
+    padding: 1rem;
+    border-radius: 14px;
+    background-color: $light;
+    text-align: center;
+    border: none;
+    .title {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    .icon-stack {
+      width: 70px;
+      margin: 0 auto;
+      margin-bottom: 14px;
+    }
+    .grade {
+      position: absolute;
+      right: 10px;
+      background: inherit;
+      width: 40px;
+      height: 40px;
+      @include place-center;
+      border-radius: 12px;
+      top: 8px;
+      font-size: 18px;
+      font-weight: 700;
+      &.a {
+        background-color: $success;
+        color: $white;
+      }
+      &.b {
+        background-color: $warning;
+        color: $dark;
+      }
+      &.c {
+        background-color: $danger;
+        color: $white;
+      }
+    }
+  }
+}

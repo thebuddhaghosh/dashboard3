@@ -2,7 +2,7 @@ $(document).ready(function () {
   let myTable = $('#example').DataTable({
     // Custom DOM structure matching your exact layout
     dom: `
-      <'top-header mt-3'<'tableTitle'T><'buttonsWrapper'>'<'search'f><'filter'B>>
+      <'top-header mt-3'<'search'f><'filter'B>>
       <'tableContent mb-0'tr>
       <'tableFooterBottom'<'left'i><'right'p>>
     `,

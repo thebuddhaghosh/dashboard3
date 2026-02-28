@@ -14,9 +14,15 @@
 .header {
   grid-area: header;
   grid-template-columns: auto 1fr auto;
+  position: sticky;
+  top: 8px;
+  z-index: 40;
 }
 .sidebar {
   grid-area: sidebar;
+  position: sticky;
+  top: calc(8px + 75px + 10px);
+  height: calc(100vh - 93px);
 }
 
 .main {
@@ -25,4 +31,12 @@
   border-radius: 20px;
   padding: 24px;
   width: 100%;
+  overflow: auto;
+}
+
+.seprator {
+  width: 100%;
+  height: 1px;
+  background-color: #dee2e6;
+  margin: 26px 0;
 }

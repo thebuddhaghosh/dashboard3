@@ -6,13 +6,16 @@
 @use './base/utilities';
 
 @use './components/sidebar';
+@use './components/formsSetting';
 @use './components/navbar';
-@use './components/sector-card';
+@use './components/cards';
 @use './components/info-card';
 @use './components/table';
 @use './components/carousal';
 @use './components/buttons';
 @use './components/kpiprogress';
+@use './components/gridview';
+@use './components/gradeFilter';
 
 @use './layout/dashboard';
 @use './layout/grid';

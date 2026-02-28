@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <title>UPCM Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet" />
+    <!-- OwlCarousel2 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+    <link href="https://cdn.datatables.net/select/1.2.7/css/select.dataTables.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./scss/main.css" />
+  </head>
+  <body>
+    <div class="layout container-fluid">
+      <header class="header topbar">
+        <div class="header__left me-3">UP CM DASHBOARD</div>
+
+        <div class="header__search">
+          <div class="search-wrap">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" class="form-control" placeholder="Search Anything..." />
+          </div>
+        </div>
+
+        <div class="topbar-actions d-flex align-items-center gap-4">
+          <span class="date d-flex align-items-center gap-1"><i class="fa-regular fa-clock"></i><span id="dateToday">15 Oct, 2025</span></span>
+          <div class="profile d-flex align-items-center gap-2">
+            <img src="./img/avtar.png" alt="avtar" class="img-fluid avatar" />
+            <div class="dropdown profile-dropdown">
+              <a class="btn bg-transparent border-0 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> John Smith </a>
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="fa-solid fa-gear"></i> Setting</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="fa-solid fa-power-off"></i> Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      <aside class="sidebar">
+        <div class="top-item">
+          <nav class="nav flex-column">
+            <a class="nav-link active" href="#"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+            <a class="nav-link" href="#"><i class="fa-solid fa-ranking-star"></i> Leaderboard</a>
+            <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i> Orders</a>
+            <a class="nav-link" href="#"><i class="fa-solid fa-chart-line"></i> Products</a>
+            <a class="nav-link" href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+          </nav>
+        </div>
+        <div class="card download-app-card">
+          <img src="img/applogo.png" class="img-fluid app-ico" alt="download-app" />
+          <h6 class="card-title mb-3">Darpan NexGen App</h6>
+          <p class="card-text mb-4">Get access to all you reports and information on your own phone.</p>
+          <a href="#" class="btn btn-primary btn-sm">Get App</a>
+        </div>
+      </aside>
+      <main class="main">
+        <section class="top-category-view">
+          <div class="heading-area d-flex justify-content-between align-items-center mb-2">
+            <h5 class="heading">Sector(s)</h5>
+            <div class="searchbar">
+              <input type="text" name="categorySearch" id="categorySearch" class="form-control" placeholder="Search in Category..." />
+            </div>
+          </div>
+          <div class="owl-carousel categories-slider">
+            <div class="item">
+              <div class="sector-card active">
+                <img src="./img/sector/Aviation.png" class="img-fluid icon-view" alt="sector-icon" />
+                <p>Aviation</p>
+                <span class="grade">N/A</span>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="sector-card">
+                <img src="./img/sector/AgriResearch.png" class="img-fluid icon-view" alt="sector-icon" />
+                <p>Agriculture</p>
+                <span class="grade a">A+</span>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="sector-card">
+                <img src="./img/sector/education.png" class="img-fluid icon-view" alt="sector-icon" />
+                <p>Education</p>
+                <span class="grade c">C</span>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="sector-card">
+                <img src="./img/sector/energy.png" class="img-fluid icon-view" alt="sector-icon" />
+                <p>Energy</p>
+                <span class="grade a">A</span>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="sector-card">
+                <img src="./img/sector/environment.png" class="img-fluid icon-view" alt="sector-icon" />
+                <p>Environment</p>
+                <span class="grade b">B</span>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="sector-card">
+                <img src="./img/sector/ruraldev.png" class="img-fluid icon-view" alt="sector-icon" />
+                <p>Rural Development</p>
+                <span class="grade a">A</span>
+              </div>
+            </div>
+            <div class="item">
+              <div class="sector-card">
+                <img src="./img/sector/tax.png" class="img-fluid icon-view" alt="sector-icon" />
+                <p>Tax</p>
+                <span class="grade a">A</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="selected-details">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card selected-sector-card">
+                <h5 class="title">Aviation Department</h5>
+                <p class="subtitle">Departments: <span class="value"> 12</span></p>
+                <span class="grade a">A</span>
+                <div class="rating-wrapper">
+                  <p class="text">Jul, 2025 DQI = 60 / 60</p>
+                  |
+                  <div class="stars">
+                    <i class="fa-solid fa-star active"></i>
+                    <i class="fa-solid fa-star active"></i>
+                    <i class="fa-solid fa-star active"></i>
+                    <i class="fa-solid fa-star active"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="count-wrapper-card d-flex gap-3 h-100">
+                <div class="card h-100">
+                  <h5 class="title">#2</h5>
+                  <p class="subtitle">Dept. Rank</p>
+                </div>
+                <div class="card h-100">
+                  <h5 class="title">12</h5>
+                  <p class="subtitle">Schemes</p>
+                </div>
+                <div class="card grade-view-card h-100">
+                  <h5 class="title">Top Performing Department</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="seprator"></div>
+        <section id="viewToggle" class="view-change-section">
+          <div class="bg-header px-4 py-3">
+            <section class="heading-view">
+              <h2 class="title">Aviation Department's Schemes</h2>
+              <div class="right-side-view">
+                <div class="search-wrapper">
+                  <input type="text" class="form-control" placeholder="Search Anything..." />
+                </div>
+                <div class="btn-group">
+                  <button class="btn btn-outline-primary active" data-target="grid-view"><i class="fa-solid fa-grip"></i></button>
+                  <button class="btn btn-outline-primary" data-target="table-view"><i class="fa-solid fa-list"></i></button>
+                </div>
+              </div>
+            </section>
+            <section class="grade-filter">
+              <div class="grade-filter-wrapper d-flex align-items-center gap-3">
+                <span class="d-block fw-semibold">Filter by Grade:</span>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="gradeAPlus" value="A+" />
+                  <label class="form-check-label ap" for="gradeAPlus">A+</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="gradeA" value="A" />
+                  <label class="form-check-label a" for="gradeA">A</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="gradeB" value="B" />
+                  <label class="form-check-label b" for="gradeB">B</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="gradeC" value="C" />
+                  <label class="form-check-label c" for="gradeC">C</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="gradeD" value="D" />
+                  <label class="form-check-label d" for="gradeD">D</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="gradeE" value="E" />
+                  <label class="form-check-label e" for="gradeE">E</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="gradeFNA" value="na" />
+                  <label class="form-check-label fna" for="gradeFNA">N/A</label>
+                </div>
+              </div>
+            </section>
+          </div>
+          <section class="table-view">
+            <table id="example" class="table row-border" style="width: 100%">
+              <thead>
+                <tr>
+                  <th>
+                    <button style="border: none; background: transparent; font-size: 14px" id="MyTableCheckAllButton">
+                      <i class="far fa-square"></i>
+                    </button>
+                  </th>
+                  <th>Departments <small class="d-block">Dates/Range</small></th>
+                  <th>KPI(s) List <small class="d-block">Units/Percentage</small></th>
+                  <th>Grades</th>
+                  <th>Scope</th>
+                  <th>Score(s)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td>
+                    <a href="#" class="clickable-text">Tiger Nixon Lorem ipsum, dolor sit amet consectetur.</a>
+                    <small class="d-block">From 01 Apr 2025 to 25 Nov 2025</small>
+                  </td>
+                  <td>
+                    <h4 class="kpi-text">Installed Capacity in Solar Energy Schemes Installation Percentage</h4>
+                    <small class="d-block">1323546.54646546 / Megawatt</small>
+                  </td>
+                  <td>
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M19.2223 0.962057C19.6226 0.466925 20.3774 0.466925 20.7777 0.962057L24.2262 5.22816C24.4749 5.5358 24.8816 5.66793 25.2636 5.56521L30.5611 4.14087C31.1759 3.97555 31.7866 4.41927 31.8194 5.05509L32.1018 10.5335C32.1221 10.9285 32.3734 11.2744 32.7429 11.4159L37.8658 13.3773C38.4604 13.605 38.6937 14.3229 38.3465 14.8566L35.3548 19.4546C35.1391 19.7862 35.1391 20.2138 35.3548 20.5454L38.3465 25.1434C38.6937 25.6771 38.4604 26.395 37.8658 26.6227L32.7429 28.5841C32.3734 28.7256 32.1221 29.0715 32.1018 29.4666L31.8194 34.9449C31.7866 35.5807 31.1759 36.0244 30.5611 35.8591L25.2636 34.4348C24.8816 34.3321 24.4749 34.4642 24.2262 34.7718L20.7777 39.0379C20.3774 39.5331 19.6226 39.5331 19.2223 39.0379L15.7738 34.7718C15.5251 34.4642 15.1184 34.3321 14.7364 34.4348L9.43894 35.8591C8.8241 36.0244 8.21339 35.5807 8.18062 34.9449L7.89824 29.4665C7.87787 29.0715 7.62655 28.7256 7.25713 28.5841L2.13416 26.6227C1.53958 26.395 1.30631 25.6771 1.65352 25.1434L4.64517 20.5454C4.8609 20.2138 4.8609 19.7862 4.64517 19.4546L1.65352 14.8566C1.30631 14.3229 1.53958 13.605 2.13416 13.3773L7.25713 11.4159C7.62655 11.2744 7.87787 10.9285 7.89824 10.5335L8.18062 5.05509C8.21339 4.41927 8.8241 3.97555 9.43894 4.14087L14.7364 5.56521C15.1184 5.66793 15.5251 5.5358 15.7738 5.22816L19.2223 0.962057Z"
+                        fill="#ff9900" />
+                      <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="white" style="font-weight: 700">C</text>
+                    </svg>
+                  </td>
+                  <td><div class="scope" title="Project have Monthly Scope">M</div></td>
+                  <td>
+                    <div class="circular-progress" data-inner-circle-color="white" data-percentage="30" data-progress-color="blue" data-bg-color="grey">
+                      <div class="inner-circle"></div>
+                      <p class="percentage">0/60</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <a href="#" class="clickable-text">Tiger Nixon Lorem ipsum, dolor sit amet consectetur.</a>
+                    <small class="d-block">From 01 Apr 2025 to 25 Nov 2025</small>
+                  </td>
+                  <td>
+                    <h4 class="kpi-text">Installed Capacity in Solar Energy Schemes Installation Percentage</h4>
+                    <small class="d-block">1323546.54646546 / Megawatt</small>
+                  </td>
+                  <td>
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M19.2223 0.962057C19.6226 0.466925 20.3774 0.466925 20.7777 0.962057L24.2262 5.22816C24.4749 5.5358 24.8816 5.66793 25.2636 5.56521L30.5611 4.14087C31.1759 3.97555 31.7866 4.41927 31.8194 5.05509L32.1018 10.5335C32.1221 10.9285 32.3734 11.2744 32.7429 11.4159L37.8658 13.3773C38.4604 13.605 38.6937 14.3229 38.3465 14.8566L35.3548 19.4546C35.1391 19.7862 35.1391 20.2138 35.3548 20.5454L38.3465 25.1434C38.6937 25.6771 38.4604 26.395 37.8658 26.6227L32.7429 28.5841C32.3734 28.7256 32.1221 29.0715 32.1018 29.4666L31.8194 34.9449C31.7866 35.5807 31.1759 36.0244 30.5611 35.8591L25.2636 34.4348C24.8816 34.3321 24.4749 34.4642 24.2262 34.7718L20.7777 39.0379C20.3774 39.5331 19.6226 39.5331 19.2223 39.0379L15.7738 34.7718C15.5251 34.4642 15.1184 34.3321 14.7364 34.4348L9.43894 35.8591C8.8241 36.0244 8.21339 35.5807 8.18062 34.9449L7.89824 29.4665C7.87787 29.0715 7.62655 28.7256 7.25713 28.5841L2.13416 26.6227C1.53958 26.395 1.30631 25.6771 1.65352 25.1434L4.64517 20.5454C4.8609 20.2138 4.8609 19.7862 4.64517 19.4546L1.65352 14.8566C1.30631 14.3229 1.53958 13.605 2.13416 13.3773L7.25713 11.4159C7.62655 11.2744 7.87787 10.9285 7.89824 10.5335L8.18062 5.05509C8.21339 4.41927 8.8241 3.97555 9.43894 4.14087L14.7364 5.56521C15.1184 5.66793 15.5251 5.5358 15.7738 5.22816L19.2223 0.962057Z"
+                        fill="#ff9900" />
+                      <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="white" style="font-weight: 700">C</text>
+                    </svg>
+                  </td>
+                  <td><div class="scope" title="Project have Monthly Scope">M</div></td>
+                  <td>
+                    <div class="circular-progress" data-inner-circle-color="white" data-percentage="30" data-progress-color="blue" data-bg-color="grey">
+                      <div class="inner-circle"></div>
+                      <p class="percentage">0/60</p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section class="grid-view mt-4">
+            <div class="row g-4">
+              <div class="col-md-3">
+                <a href="detailpage.html" target="_blank" class="card scheme-card">
+                  <div class="card-header">
+                    <img src="img/sector/energy.png" alt="" class="img-fluid icon-stack" />
+                    <div class="title-area">
+                      <h5 class="title">Incentives for various bio energy plant</h5>
+                      <small class="duration">From 01 Apr 2025 to 25 Nov 2025</small>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="kpi-title">Installed Capacity in Solar Energy Schemes Installation Percentage</h5>
+                    <p class="value-wrap">
+                      <span class="value">1323546.54646546</span>
+                      <small class="value">Megawatt</small>
+                    </p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="scope" title="Project have Monthly Scope">M</div>
+                    <div class="grade" title="Grade C">
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M19.2223 0.962057C19.6226 0.466925 20.3774 0.466925 20.7777 0.962057L24.2262 5.22816C24.4749 5.5358 24.8816 5.66793 25.2636 5.56521L30.5611 4.14087C31.1759 3.97555 31.7866 4.41927 31.8194 5.05509L32.1018 10.5335C32.1221 10.9285 32.3734 11.2744 32.7429 11.4159L37.8658 13.3773C38.4604 13.605 38.6937 14.3229 38.3465 14.8566L35.3548 19.4546C35.1391 19.7862 35.1391 20.2138 35.3548 20.5454L38.3465 25.1434C38.6937 25.6771 38.4604 26.395 37.8658 26.6227L32.7429 28.5841C32.3734 28.7256 32.1221 29.0715 32.1018 29.4666L31.8194 34.9449C31.7866 35.5807 31.1759 36.0244 30.5611 35.8591L25.2636 34.4348C24.8816 34.3321 24.4749 34.4642 24.2262 34.7718L20.7777 39.0379C20.3774 39.5331 19.6226 39.5331 19.2223 39.0379L15.7738 34.7718C15.5251 34.4642 15.1184 34.3321 14.7364 34.4348L9.43894 35.8591C8.8241 36.0244 8.21339 35.5807 8.18062 34.9449L7.89824 29.4665C7.87787 29.0715 7.62655 28.7256 7.25713 28.5841L2.13416 26.6227C1.53958 26.395 1.30631 25.6771 1.65352 25.1434L4.64517 20.5454C4.8609 20.2138 4.8609 19.7862 4.64517 19.4546L1.65352 14.8566C1.30631 14.3229 1.53958 13.605 2.13416 13.3773L7.25713 11.4159C7.62655 11.2744 7.87787 10.9285 7.89824 10.5335L8.18062 5.05509C8.21339 4.41927 8.8241 3.97555 9.43894 4.14087L14.7364 5.56521C15.1184 5.66793 15.5251 5.5358 15.7738 5.22816L19.2223 0.962057Z"
+                          fill="#ff9900" />
+                        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="white" style="font-weight: 700">C</text>
+                      </svg>
+                    </div>
+                    <div class="circular-progress" title="KPI Score is 30" data-inner-circle-color="white" data-percentage="30" data-progress-color="blue" data-bg-color="grey">
+                      <div class="inner-circle"></div>
+                      <p class="percentage">0/60</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="detailpage.html" target="_blank" class="card scheme-card">
+                  <div class="card-header">
+                    <img src="img/sector/energy.png" alt="" class="img-fluid icon-stack" />
+                    <div class="title-area">
+                      <h5 class="title">Incentives for various bio energy plant</h5>
+                      <small class="duration">From 01 Apr 2025 to 25 Nov 2025</small>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="kpi-title">Installed Capacity in Solar Energy Schemes Installation Percentage</h5>
+                    <p class="value-wrap">
+                      <span class="value">1323546.54646546</span>
+                      <small class="value">Megawatt</small>
+                    </p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="scope" title="Project have Monthly Scope">M</div>
+                    <div class="grade" title="Grade C">
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M19.2223 0.962057C19.6226 0.466925 20.3774 0.466925 20.7777 0.962057L24.2262 5.22816C24.4749 5.5358 24.8816 5.66793 25.2636 5.56521L30.5611 4.14087C31.1759 3.97555 31.7866 4.41927 31.8194 5.05509L32.1018 10.5335C32.1221 10.9285 32.3734 11.2744 32.7429 11.4159L37.8658 13.3773C38.4604 13.605 38.6937 14.3229 38.3465 14.8566L35.3548 19.4546C35.1391 19.7862 35.1391 20.2138 35.3548 20.5454L38.3465 25.1434C38.6937 25.6771 38.4604 26.395 37.8658 26.6227L32.7429 28.5841C32.3734 28.7256 32.1221 29.0715 32.1018 29.4666L31.8194 34.9449C31.7866 35.5807 31.1759 36.0244 30.5611 35.8591L25.2636 34.4348C24.8816 34.3321 24.4749 34.4642 24.2262 34.7718L20.7777 39.0379C20.3774 39.5331 19.6226 39.5331 19.2223 39.0379L15.7738 34.7718C15.5251 34.4642 15.1184 34.3321 14.7364 34.4348L9.43894 35.8591C8.8241 36.0244 8.21339 35.5807 8.18062 34.9449L7.89824 29.4665C7.87787 29.0715 7.62655 28.7256 7.25713 28.5841L2.13416 26.6227C1.53958 26.395 1.30631 25.6771 1.65352 25.1434L4.64517 20.5454C4.8609 20.2138 4.8609 19.7862 4.64517 19.4546L1.65352 14.8566C1.30631 14.3229 1.53958 13.605 2.13416 13.3773L7.25713 11.4159C7.62655 11.2744 7.87787 10.9285 7.89824 10.5335L8.18062 5.05509C8.21339 4.41927 8.8241 3.97555 9.43894 4.14087L14.7364 5.56521C15.1184 5.66793 15.5251 5.5358 15.7738 5.22816L19.2223 0.962057Z"
+                          fill="#ff9900" />
+                        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="white" style="font-weight: 700">C</text>
+                      </svg>
+                    </div>
+                    <div class="circular-progress" title="KPI Score is 30" data-inner-circle-color="white" data-percentage="30" data-progress-color="blue" data-bg-color="grey">
+                      <div class="inner-circle"></div>
+                      <p class="percentage">0/60</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="detailpage.html" target="_blank" class="card scheme-card">
+                  <div class="card-header">
+                    <img src="img/sector/energy.png" alt="" class="img-fluid icon-stack" />
+                    <div class="title-area">
+                      <h5 class="title">Incentives for various bio energy plant</h5>
+                      <small class="duration">From 01 Apr 2025 to 25 Nov 2025</small>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="kpi-title">Installed Capacity in Solar Energy Schemes Installation Percentage</h5>
+                    <p class="value-wrap">
+                      <span class="value">1323546.54646546</span>
+                      <small class="value">Megawatt</small>
+                    </p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="scope" title="Project have Monthly Scope">M</div>
+                    <div class="grade" title="Grade C">
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M19.2223 0.962057C19.6226 0.466925 20.3774 0.466925 20.7777 0.962057L24.2262 5.22816C24.4749 5.5358 24.8816 5.66793 25.2636 5.56521L30.5611 4.14087C31.1759 3.97555 31.7866 4.41927 31.8194 5.05509L32.1018 10.5335C32.1221 10.9285 32.3734 11.2744 32.7429 11.4159L37.8658 13.3773C38.4604 13.605 38.6937 14.3229 38.3465 14.8566L35.3548 19.4546C35.1391 19.7862 35.1391 20.2138 35.3548 20.5454L38.3465 25.1434C38.6937 25.6771 38.4604 26.395 37.8658 26.6227L32.7429 28.5841C32.3734 28.7256 32.1221 29.0715 32.1018 29.4666L31.8194 34.9449C31.7866 35.5807 31.1759 36.0244 30.5611 35.8591L25.2636 34.4348C24.8816 34.3321 24.4749 34.4642 24.2262 34.7718L20.7777 39.0379C20.3774 39.5331 19.6226 39.5331 19.2223 39.0379L15.7738 34.7718C15.5251 34.4642 15.1184 34.3321 14.7364 34.4348L9.43894 35.8591C8.8241 36.0244 8.21339 35.5807 8.18062 34.9449L7.89824 29.4665C7.87787 29.0715 7.62655 28.7256 7.25713 28.5841L2.13416 26.6227C1.53958 26.395 1.30631 25.6771 1.65352 25.1434L4.64517 20.5454C4.8609 20.2138 4.8609 19.7862 4.64517 19.4546L1.65352 14.8566C1.30631 14.3229 1.53958 13.605 2.13416 13.3773L7.25713 11.4159C7.62655 11.2744 7.87787 10.9285 7.89824 10.5335L8.18062 5.05509C8.21339 4.41927 8.8241 3.97555 9.43894 4.14087L14.7364 5.56521C15.1184 5.66793 15.5251 5.5358 15.7738 5.22816L19.2223 0.962057Z"
+                          fill="#ff9900" />
+                        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="white" style="font-weight: 700">C</text>
+                      </svg>
+                    </div>
+                    <div class="circular-progress" title="KPI Score is 30" data-inner-circle-color="white" data-percentage="30" data-progress-color="blue" data-bg-color="grey">
+                      <div class="inner-circle"></div>
+                      <p class="percentage">0/60</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="detailpage.html" target="_blank" class="card scheme-card">
+                  <div class="card-header">
+                    <img src="img/sector/energy.png" alt="" class="img-fluid icon-stack" />
+                    <div class="title-area">
+                      <h5 class="title">Incentives for various bio energy plant</h5>
+                      <small class="duration">From 01 Apr 2025 to 25 Nov 2025</small>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="kpi-title">Installed Capacity in Solar Energy Schemes Installation Percentage</h5>
+                    <p class="value-wrap">
+                      <span class="value">1323546.54646546</span>
+                      <small class="value">Megawatt</small>
+                    </p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="scope" title="Project have Monthly Scope">M</div>
+                    <div class="grade" title="Grade C">
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M19.2223 0.962057C19.6226 0.466925 20.3774 0.466925 20.7777 0.962057L24.2262 5.22816C24.4749 5.5358 24.8816 5.66793 25.2636 5.56521L30.5611 4.14087C31.1759 3.97555 31.7866 4.41927 31.8194 5.05509L32.1018 10.5335C32.1221 10.9285 32.3734 11.2744 32.7429 11.4159L37.8658 13.3773C38.4604 13.605 38.6937 14.3229 38.3465 14.8566L35.3548 19.4546C35.1391 19.7862 35.1391 20.2138 35.3548 20.5454L38.3465 25.1434C38.6937 25.6771 38.4604 26.395 37.8658 26.6227L32.7429 28.5841C32.3734 28.7256 32.1221 29.0715 32.1018 29.4666L31.8194 34.9449C31.7866 35.5807 31.1759 36.0244 30.5611 35.8591L25.2636 34.4348C24.8816 34.3321 24.4749 34.4642 24.2262 34.7718L20.7777 39.0379C20.3774 39.5331 19.6226 39.5331 19.2223 39.0379L15.7738 34.7718C15.5251 34.4642 15.1184 34.3321 14.7364 34.4348L9.43894 35.8591C8.8241 36.0244 8.21339 35.5807 8.18062 34.9449L7.89824 29.4665C7.87787 29.0715 7.62655 28.7256 7.25713 28.5841L2.13416 26.6227C1.53958 26.395 1.30631 25.6771 1.65352 25.1434L4.64517 20.5454C4.8609 20.2138 4.8609 19.7862 4.64517 19.4546L1.65352 14.8566C1.30631 14.3229 1.53958 13.605 2.13416 13.3773L7.25713 11.4159C7.62655 11.2744 7.87787 10.9285 7.89824 10.5335L8.18062 5.05509C8.21339 4.41927 8.8241 3.97555 9.43894 4.14087L14.7364 5.56521C15.1184 5.66793 15.5251 5.5358 15.7738 5.22816L19.2223 0.962057Z"
+                          fill="#ff9900" />
+                        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="white" style="font-weight: 700">C</text>
+                      </svg>
+                    </div>
+                    <div class="circular-progress" title="KPI Score is 30" data-inner-circle-color="white" data-percentage="30" data-progress-color="blue" data-bg-color="grey">
+                      <div class="inner-circle"></div>
+                      <p class="percentage">0/60</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="detailpage.html" target="_blank" class="card scheme-card">
+                  <div class="card-header">
+                    <img src="img/sector/energy.png" alt="" class="img-fluid icon-stack" />
+                    <div class="title-area">
+                      <h5 class="title">Incentives for various bio energy plant</h5>
+                      <small class="duration">From 01 Apr 2025 to 25 Nov 2025</small>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="kpi-title">Installed Capacity in Solar Energy Schemes Installation Percentage</h5>
+                    <p class="value-wrap">
+                      <span class="value">1323546.54646546</span>
+                      <small class="value">Megawatt</small>
+                    </p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="scope" title="Project have Monthly Scope">M</div>
+                    <div class="grade" title="Grade C">
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M19.2223 0.962057C19.6226 0.466925 20.3774 0.466925 20.7777 0.962057L24.2262 5.22816C24.4749 5.5358 24.8816 5.66793 25.2636 5.56521L30.5611 4.14087C31.1759 3.97555 31.7866 4.41927 31.8194 5.05509L32.1018 10.5335C32.1221 10.9285 32.3734 11.2744 32.7429 11.4159L37.8658 13.3773C38.4604 13.605 38.6937 14.3229 38.3465 14.8566L35.3548 19.4546C35.1391 19.7862 35.1391 20.2138 35.3548 20.5454L38.3465 25.1434C38.6937 25.6771 38.4604 26.395 37.8658 26.6227L32.7429 28.5841C32.3734 28.7256 32.1221 29.0715 32.1018 29.4666L31.8194 34.9449C31.7866 35.5807 31.1759 36.0244 30.5611 35.8591L25.2636 34.4348C24.8816 34.3321 24.4749 34.4642 24.2262 34.7718L20.7777 39.0379C20.3774 39.5331 19.6226 39.5331 19.2223 39.0379L15.7738 34.7718C15.5251 34.4642 15.1184 34.3321 14.7364 34.4348L9.43894 35.8591C8.8241 36.0244 8.21339 35.5807 8.18062 34.9449L7.89824 29.4665C7.87787 29.0715 7.62655 28.7256 7.25713 28.5841L2.13416 26.6227C1.53958 26.395 1.30631 25.6771 1.65352 25.1434L4.64517 20.5454C4.8609 20.2138 4.8609 19.7862 4.64517 19.4546L1.65352 14.8566C1.30631 14.3229 1.53958 13.605 2.13416 13.3773L7.25713 11.4159C7.62655 11.2744 7.87787 10.9285 7.89824 10.5335L8.18062 5.05509C8.21339 4.41927 8.8241 3.97555 9.43894 4.14087L14.7364 5.56521C15.1184 5.66793 15.5251 5.5358 15.7738 5.22816L19.2223 0.962057Z"
+                          fill="#ff9900" />
+                        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="white" style="font-weight: 700">C</text>
+                      </svg>
+                    </div>
+                    <div class="circular-progress" title="KPI Score is 30" data-inner-circle-color="white" data-percentage="30" data-progress-color="blue" data-bg-color="grey">
+                      <div class="inner-circle"></div>
+                      <p class="percentage">0/60</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="detailpage.html" target="_blank" class="card scheme-card">
+                  <div class="card-header">
+                    <img src="img/sector/energy.png" alt="" class="img-fluid icon-stack" />
+                    <div class="title-area">
+                      <h5 class="title">Incentives for various bio energy plant</h5>
+                      <small class="duration">From 01 Apr 2025 to 25 Nov 2025</small>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="kpi-title">Installed Capacity in Solar Energy Schemes Installation Percentage</h5>
+                    <p class="value-wrap">
+                      <span class="value">1323546.54646546</span>
+                      <small class="value">Megawatt</small>
+                    </p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="scope" title="Project have Monthly Scope">M</div>
+                    <div class="grade" title="Grade C">
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M19.2223 0.962057C19.6226 0.466925 20.3774 0.466925 20.7777 0.962057L24.2262 5.22816C24.4749 5.5358 24.8816 5.66793 25.2636 5.56521L30.5611 4.14087C31.1759 3.97555 31.7866 4.41927 31.8194 5.05509L32.1018 10.5335C32.1221 10.9285 32.3734 11.2744 32.7429 11.4159L37.8658 13.3773C38.4604 13.605 38.6937 14.3229 38.3465 14.8566L35.3548 19.4546C35.1391 19.7862 35.1391 20.2138 35.3548 20.5454L38.3465 25.1434C38.6937 25.6771 38.4604 26.395 37.8658 26.6227L32.7429 28.5841C32.3734 28.7256 32.1221 29.0715 32.1018 29.4666L31.8194 34.9449C31.7866 35.5807 31.1759 36.0244 30.5611 35.8591L25.2636 34.4348C24.8816 34.3321 24.4749 34.4642 24.2262 34.7718L20.7777 39.0379C20.3774 39.5331 19.6226 39.5331 19.2223 39.0379L15.7738 34.7718C15.5251 34.4642 15.1184 34.3321 14.7364 34.4348L9.43894 35.8591C8.8241 36.0244 8.21339 35.5807 8.18062 34.9449L7.89824 29.4665C7.87787 29.0715 7.62655 28.7256 7.25713 28.5841L2.13416 26.6227C1.53958 26.395 1.30631 25.6771 1.65352 25.1434L4.64517 20.5454C4.8609 20.2138 4.8609 19.7862 4.64517 19.4546L1.65352 14.8566C1.30631 14.3229 1.53958 13.605 2.13416 13.3773L7.25713 11.4159C7.62655 11.2744 7.87787 10.9285 7.89824 10.5335L8.18062 5.05509C8.21339 4.41927 8.8241 3.97555 9.43894 4.14087L14.7364 5.56521C15.1184 5.66793 15.5251 5.5358 15.7738 5.22816L19.2223 0.962057Z"
+                          fill="#ff9900" />
+                        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="white" style="font-weight: 700">C</text>
+                      </svg>
+                    </div>
+                    <div class="circular-progress" title="KPI Score is 30" data-inner-circle-color="white" data-percentage="30" data-progress-color="blue" data-bg-color="grey">
+                      <div class="inner-circle"></div>
+                      <p class="percentage">0/60</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="detailpage.html" target="_blank" class="card scheme-card">
+                  <div class="card-header">
+                    <img src="img/sector/energy.png" alt="" class="img-fluid icon-stack" />
+                    <div class="title-area">
+                      <h5 class="title">Incentives for various bio energy plant</h5>
+                      <small class="duration">From 01 Apr 2025 to 25 Nov 2025</small>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="kpi-title">Installed Capacity in Solar Energy Schemes Installation Percentage</h5>
+                    <p class="value-wrap">
+                      <span class="value">1323546.54646546</span>
+                      <small class="value">Megawatt</small>
+                    </p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="scope" title="Project have Monthly Scope">M</div>
+                    <div class="grade" title="Grade C">
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M19.2223 0.962057C19.6226 0.466925 20.3774 0.466925 20.7777 0.962057L24.2262 5.22816C24.4749 5.5358 24.8816 5.66793 25.2636 5.56521L30.5611 4.14087C31.1759 3.97555 31.7866 4.41927 31.8194 5.05509L32.1018 10.5335C32.1221 10.9285 32.3734 11.2744 32.7429 11.4159L37.8658 13.3773C38.4604 13.605 38.6937 14.3229 38.3465 14.8566L35.3548 19.4546C35.1391 19.7862 35.1391 20.2138 35.3548 20.5454L38.3465 25.1434C38.6937 25.6771 38.4604 26.395 37.8658 26.6227L32.7429 28.5841C32.3734 28.7256 32.1221 29.0715 32.1018 29.4666L31.8194 34.9449C31.7866 35.5807 31.1759 36.0244 30.5611 35.8591L25.2636 34.4348C24.8816 34.3321 24.4749 34.4642 24.2262 34.7718L20.7777 39.0379C20.3774 39.5331 19.6226 39.5331 19.2223 39.0379L15.7738 34.7718C15.5251 34.4642 15.1184 34.3321 14.7364 34.4348L9.43894 35.8591C8.8241 36.0244 8.21339 35.5807 8.18062 34.9449L7.89824 29.4665C7.87787 29.0715 7.62655 28.7256 7.25713 28.5841L2.13416 26.6227C1.53958 26.395 1.30631 25.6771 1.65352 25.1434L4.64517 20.5454C4.8609 20.2138 4.8609 19.7862 4.64517 19.4546L1.65352 14.8566C1.30631 14.3229 1.53958 13.605 2.13416 13.3773L7.25713 11.4159C7.62655 11.2744 7.87787 10.9285 7.89824 10.5335L8.18062 5.05509C8.21339 4.41927 8.8241 3.97555 9.43894 4.14087L14.7364 5.56521C15.1184 5.66793 15.5251 5.5358 15.7738 5.22816L19.2223 0.962057Z"
+                          fill="#ff9900" />
+                        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="white" style="font-weight: 700">C</text>
+                      </svg>
+                    </div>
+                    <div class="circular-progress" title="KPI Score is 30" data-inner-circle-color="white" data-percentage="30" data-progress-color="blue" data-bg-color="grey">
+                      <div class="inner-circle"></div>
+                      <p class="percentage">0/60</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="detailpage.html" target="_blank" class="card scheme-card">
+                  <div class="card-header">
+                    <img src="img/sector/energy.png" alt="" class="img-fluid icon-stack" />
+                    <div class="title-area">
+                      <h5 class="title">Incentives for various bio energy plant</h5>
+                      <small class="duration">From 01 Apr 2025 to 25 Nov 2025</small>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="kpi-title">Installed Capacity in Solar Energy Schemes Installation Percentage</h5>
+                    <p class="value-wrap">
+                      <span class="value">1323546.54646546</span>
+                      <small class="value">Megawatt</small>
+                    </p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="scope" title="Project have Monthly Scope">M</div>
+                    <div class="grade" title="Grade C">
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M19.2223 0.962057C19.6226 0.466925 20.3774 0.466925 20.7777 0.962057L24.2262 5.22816C24.4749 5.5358 24.8816 5.66793 25.2636 5.56521L30.5611 4.14087C31.1759 3.97555 31.7866 4.41927 31.8194 5.05509L32.1018 10.5335C32.1221 10.9285 32.3734 11.2744 32.7429 11.4159L37.8658 13.3773C38.4604 13.605 38.6937 14.3229 38.3465 14.8566L35.3548 19.4546C35.1391 19.7862 35.1391 20.2138 35.3548 20.5454L38.3465 25.1434C38.6937 25.6771 38.4604 26.395 37.8658 26.6227L32.7429 28.5841C32.3734 28.7256 32.1221 29.0715 32.1018 29.4666L31.8194 34.9449C31.7866 35.5807 31.1759 36.0244 30.5611 35.8591L25.2636 34.4348C24.8816 34.3321 24.4749 34.4642 24.2262 34.7718L20.7777 39.0379C20.3774 39.5331 19.6226 39.5331 19.2223 39.0379L15.7738 34.7718C15.5251 34.4642 15.1184 34.3321 14.7364 34.4348L9.43894 35.8591C8.8241 36.0244 8.21339 35.5807 8.18062 34.9449L7.89824 29.4665C7.87787 29.0715 7.62655 28.7256 7.25713 28.5841L2.13416 26.6227C1.53958 26.395 1.30631 25.6771 1.65352 25.1434L4.64517 20.5454C4.8609 20.2138 4.8609 19.7862 4.64517 19.4546L1.65352 14.8566C1.30631 14.3229 1.53958 13.605 2.13416 13.3773L7.25713 11.4159C7.62655 11.2744 7.87787 10.9285 7.89824 10.5335L8.18062 5.05509C8.21339 4.41927 8.8241 3.97555 9.43894 4.14087L14.7364 5.56521C15.1184 5.66793 15.5251 5.5358 15.7738 5.22816L19.2223 0.962057Z"
+                          fill="#ff9900" />
+                        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="white" style="font-weight: 700">C</text>
+                      </svg>
+                    </div>
+                    <div class="circular-progress" title="KPI Score is 30" data-inner-circle-color="white" data-percentage="30" data-progress-color="blue" data-bg-color="grey">
+                      <div class="inner-circle"></div>
+                      <p class="percentage">0/60</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="detailpage.html" target="_blank" class="card scheme-card">
+                  <div class="card-header">
+                    <img src="img/sector/energy.png" alt="" class="img-fluid icon-stack" />
+                    <div class="title-area">
+                      <h5 class="title">Incentives for various bio energy plant</h5>
+                      <small class="duration">From 01 Apr 2025 to 25 Nov 2025</small>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="kpi-title">Installed Capacity in Solar Energy Schemes Installation Percentage</h5>
+                    <p class="value-wrap">
+                      <span class="value">1323546.54646546</span>
+                      <small class="value">Megawatt</small>
+                    </p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="scope" title="Project have Monthly Scope">M</div>
+                    <div class="grade" title="Grade C">
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M19.2223 0.962057C19.6226 0.466925 20.3774 0.466925 20.7777 0.962057L24.2262 5.22816C24.4749 5.5358 24.8816 5.66793 25.2636 5.56521L30.5611 4.14087C31.1759 3.97555 31.7866 4.41927 31.8194 5.05509L32.1018 10.5335C32.1221 10.9285 32.3734 11.2744 32.7429 11.4159L37.8658 13.3773C38.4604 13.605 38.6937 14.3229 38.3465 14.8566L35.3548 19.4546C35.1391 19.7862 35.1391 20.2138 35.3548 20.5454L38.3465 25.1434C38.6937 25.6771 38.4604 26.395 37.8658 26.6227L32.7429 28.5841C32.3734 28.7256 32.1221 29.0715 32.1018 29.4666L31.8194 34.9449C31.7866 35.5807 31.1759 36.0244 30.5611 35.8591L25.2636 34.4348C24.8816 34.3321 24.4749 34.4642 24.2262 34.7718L20.7777 39.0379C20.3774 39.5331 19.6226 39.5331 19.2223 39.0379L15.7738 34.7718C15.5251 34.4642 15.1184 34.3321 14.7364 34.4348L9.43894 35.8591C8.8241 36.0244 8.21339 35.5807 8.18062 34.9449L7.89824 29.4665C7.87787 29.0715 7.62655 28.7256 7.25713 28.5841L2.13416 26.6227C1.53958 26.395 1.30631 25.6771 1.65352 25.1434L4.64517 20.5454C4.8609 20.2138 4.8609 19.7862 4.64517 19.4546L1.65352 14.8566C1.30631 14.3229 1.53958 13.605 2.13416 13.3773L7.25713 11.4159C7.62655 11.2744 7.87787 10.9285 7.89824 10.5335L8.18062 5.05509C8.21339 4.41927 8.8241 3.97555 9.43894 4.14087L14.7364 5.56521C15.1184 5.66793 15.5251 5.5358 15.7738 5.22816L19.2223 0.962057Z"
+                          fill="#ff9900" />
+                        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="white" style="font-weight: 700">C</text>
+                      </svg>
+                    </div>
+                    <div class="circular-progress" title="KPI Score is 30" data-inner-circle-color="white" data-percentage="30" data-progress-color="blue" data-bg-color="grey">
+                      <div class="inner-circle"></div>
+                      <p class="percentage">0/60</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="detailpage.html" target="_blank" class="card scheme-card">
+                  <div class="card-header">
+                    <img src="img/sector/energy.png" alt="" class="img-fluid icon-stack" />
+                    <div class="title-area">
+                      <h5 class="title">Incentives for various bio energy plant</h5>
+                      <small class="duration">From 01 Apr 2025 to 25 Nov 2025</small>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="kpi-title">Installed Capacity in Solar Energy Schemes Installation Percentage</h5>
+                    <p class="value-wrap">
+                      <span class="value">1323546.54646546</span>
+                      <small class="value">Megawatt</small>
+                    </p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="scope" title="Project have Monthly Scope">M</div>
+                    <div class="grade" title="Grade C">
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M19.2223 0.962057C19.6226 0.466925 20.3774 0.466925 20.7777 0.962057L24.2262 5.22816C24.4749 5.5358 24.8816 5.66793 25.2636 5.56521L30.5611 4.14087C31.1759 3.97555 31.7866 4.41927 31.8194 5.05509L32.1018 10.5335C32.1221 10.9285 32.3734 11.2744 32.7429 11.4159L37.8658 13.3773C38.4604 13.605 38.6937 14.3229 38.3465 14.8566L35.3548 19.4546C35.1391 19.7862 35.1391 20.2138 35.3548 20.5454L38.3465 25.1434C38.6937 25.6771 38.4604 26.395 37.8658 26.6227L32.7429 28.5841C32.3734 28.7256 32.1221 29.0715 32.1018 29.4666L31.8194 34.9449C31.7866 35.5807 31.1759 36.0244 30.5611 35.8591L25.2636 34.4348C24.8816 34.3321 24.4749 34.4642 24.2262 34.7718L20.7777 39.0379C20.3774 39.5331 19.6226 39.5331 19.2223 39.0379L15.7738 34.7718C15.5251 34.4642 15.1184 34.3321 14.7364 34.4348L9.43894 35.8591C8.8241 36.0244 8.21339 35.5807 8.18062 34.9449L7.89824 29.4665C7.87787 29.0715 7.62655 28.7256 7.25713 28.5841L2.13416 26.6227C1.53958 26.395 1.30631 25.6771 1.65352 25.1434L4.64517 20.5454C4.8609 20.2138 4.8609 19.7862 4.64517 19.4546L1.65352 14.8566C1.30631 14.3229 1.53958 13.605 2.13416 13.3773L7.25713 11.4159C7.62655 11.2744 7.87787 10.9285 7.89824 10.5335L8.18062 5.05509C8.21339 4.41927 8.8241 3.97555 9.43894 4.14087L14.7364 5.56521C15.1184 5.66793 15.5251 5.5358 15.7738 5.22816L19.2223 0.962057Z"
+                          fill="#ff9900" />
+                        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="white" style="font-weight: 700">C</text>
+                      </svg>
+                    </div>
+                    <div class="circular-progress" title="KPI Score is 30" data-inner-circle-color="white" data-percentage="30" data-progress-color="blue" data-bg-color="grey">
+                      <div class="inner-circle"></div>
+                      <p class="percentage">0/60</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="detailpage.html" target="_blank" class="card scheme-card">
+                  <div class="card-header">
+                    <img src="img/sector/energy.png" alt="" class="img-fluid icon-stack" />
+                    <div class="title-area">
+                      <h5 class="title">Incentives for various bio energy plant</h5>
+                      <small class="duration">From 01 Apr 2025 to 25 Nov 2025</small>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="kpi-title">Installed Capacity in Solar Energy Schemes Installation Percentage</h5>
+                    <p class="value-wrap">
+                      <span class="value">1323546.54646546</span>
+                      <small class="value">Megawatt</small>
+                    </p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="scope" title="Project have Monthly Scope">M</div>
+                    <div class="grade" title="Grade C">
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M19.2223 0.962057C19.6226 0.466925 20.3774 0.466925 20.7777 0.962057L24.2262 5.22816C24.4749 5.5358 24.8816 5.66793 25.2636 5.56521L30.5611 4.14087C31.1759 3.97555 31.7866 4.41927 31.8194 5.05509L32.1018 10.5335C32.1221 10.9285 32.3734 11.2744 32.7429 11.4159L37.8658 13.3773C38.4604 13.605 38.6937 14.3229 38.3465 14.8566L35.3548 19.4546C35.1391 19.7862 35.1391 20.2138 35.3548 20.5454L38.3465 25.1434C38.6937 25.6771 38.4604 26.395 37.8658 26.6227L32.7429 28.5841C32.3734 28.7256 32.1221 29.0715 32.1018 29.4666L31.8194 34.9449C31.7866 35.5807 31.1759 36.0244 30.5611 35.8591L25.2636 34.4348C24.8816 34.3321 24.4749 34.4642 24.2262 34.7718L20.7777 39.0379C20.3774 39.5331 19.6226 39.5331 19.2223 39.0379L15.7738 34.7718C15.5251 34.4642 15.1184 34.3321 14.7364 34.4348L9.43894 35.8591C8.8241 36.0244 8.21339 35.5807 8.18062 34.9449L7.89824 29.4665C7.87787 29.0715 7.62655 28.7256 7.25713 28.5841L2.13416 26.6227C1.53958 26.395 1.30631 25.6771 1.65352 25.1434L4.64517 20.5454C4.8609 20.2138 4.8609 19.7862 4.64517 19.4546L1.65352 14.8566C1.30631 14.3229 1.53958 13.605 2.13416 13.3773L7.25713 11.4159C7.62655 11.2744 7.87787 10.9285 7.89824 10.5335L8.18062 5.05509C8.21339 4.41927 8.8241 3.97555 9.43894 4.14087L14.7364 5.56521C15.1184 5.66793 15.5251 5.5358 15.7738 5.22816L19.2223 0.962057Z"
+                          fill="#ff9900" />
+                        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="white" style="font-weight: 700">C</text>
+                      </svg>
+                    </div>
+                    <div class="circular-progress" title="KPI Score is 30" data-inner-circle-color="white" data-percentage="30" data-progress-color="blue" data-bg-color="grey">
+                      <div class="inner-circle"></div>
+                      <p class="percentage">0/60</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="detailpage.html" target="_blank" class="card scheme-card">
+                  <div class="card-header">
+                    <img src="img/sector/energy.png" alt="" class="img-fluid icon-stack" />
+                    <div class="title-area">
+                      <h5 class="title">Incentives for various bio energy plant</h5>
+                      <small class="duration">From 01 Apr 2025 to 25 Nov 2025</small>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="kpi-title">Installed Capacity in Solar Energy Schemes Installation Percentage</h5>
+                    <p class="value-wrap">
+                      <span class="value">1323546.54646546</span>
+                      <small class="value">Megawatt</small>
+                    </p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="scope" title="Project have Monthly Scope">M</div>
+                    <div class="grade" title="Grade C">
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M19.2223 0.962057C19.6226 0.466925 20.3774 0.466925 20.7777 0.962057L24.2262 5.22816C24.4749 5.5358 24.8816 5.66793 25.2636 5.56521L30.5611 4.14087C31.1759 3.97555 31.7866 4.41927 31.8194 5.05509L32.1018 10.5335C32.1221 10.9285 32.3734 11.2744 32.7429 11.4159L37.8658 13.3773C38.4604 13.605 38.6937 14.3229 38.3465 14.8566L35.3548 19.4546C35.1391 19.7862 35.1391 20.2138 35.3548 20.5454L38.3465 25.1434C38.6937 25.6771 38.4604 26.395 37.8658 26.6227L32.7429 28.5841C32.3734 28.7256 32.1221 29.0715 32.1018 29.4666L31.8194 34.9449C31.7866 35.5807 31.1759 36.0244 30.5611 35.8591L25.2636 34.4348C24.8816 34.3321 24.4749 34.4642 24.2262 34.7718L20.7777 39.0379C20.3774 39.5331 19.6226 39.5331 19.2223 39.0379L15.7738 34.7718C15.5251 34.4642 15.1184 34.3321 14.7364 34.4348L9.43894 35.8591C8.8241 36.0244 8.21339 35.5807 8.18062 34.9449L7.89824 29.4665C7.87787 29.0715 7.62655 28.7256 7.25713 28.5841L2.13416 26.6227C1.53958 26.395 1.30631 25.6771 1.65352 25.1434L4.64517 20.5454C4.8609 20.2138 4.8609 19.7862 4.64517 19.4546L1.65352 14.8566C1.30631 14.3229 1.53958 13.605 2.13416 13.3773L7.25713 11.4159C7.62655 11.2744 7.87787 10.9285 7.89824 10.5335L8.18062 5.05509C8.21339 4.41927 8.8241 3.97555 9.43894 4.14087L14.7364 5.56521C15.1184 5.66793 15.5251 5.5358 15.7738 5.22816L19.2223 0.962057Z"
+                          fill="#ff9900" />
+                        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="white" style="font-weight: 700">C</text>
+                      </svg>
+                    </div>
+                    <div class="circular-progress" title="KPI Score is 30" data-inner-circle-color="white" data-percentage="30" data-progress-color="blue" data-bg-color="grey">
+                      <div class="inner-circle"></div>
+                      <p class="percentage">0/60</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+
+    <!-- Updated DataTables scripts compatible with Bootstrap 5 -->
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.7.0/js/dataTables.select.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.7.0/js/select.bootstrap5.min.js"></script>
+
+    <!-- DataTables Buttons & SearchBuilder -->
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/searchbuilder/1.5.0/js/dataTables.searchBuilder.min.js"></script>
+    <script src="https://cdn.datatables.net/searchbuilder/1.5.0/js/searchBuilder.bootstrap5.min.js"></script>
+
+    <!-- Export dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+
+    <!-- OwlCarousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="./js/tableData.js"></script>
+    <script src="./js/kpiProgress.js"></script>
+    <script>
+      // OwlCarousel initialization (unchanged)
+      let vpWidth = $('.layout').innerWidth();
+      $('.categories-slider').css('max-width', vpWidth - 320 + 'px');
+
+      $(function () {
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+          items: 6,
+          margin: 20,
+          loop: false,
+          nav: true,
+          responsive: {
+            0: { items: 1 },
+            768: { items: 2 },
+            992: { items: 6 },
+          },
+          stagePadding: 0,
+          rewind: true,
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        // Show grid by default
+        // $('.grid-view').show();
+        // $('.table-view').hide();
+
+        $('.table-view').show();
+        $('.grid-view').hide();
+
+        $('.btn-group button').click(function () {
+          $('.btn-group button').removeClass('active');
+          $(this).addClass('active');
+
+          var target = $(this).data('target');
+
+          $('.grid-view, .table-view').hide();
+          $('.' + target).fadeIn(200);
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('dateToday').textContent = new Date().toLocaleDateString('en-GB', {
+          day: '2-digit',
+          month: 'short',
+          year: 'numeric',
+        });
+      });
+    </script>
+  </body>
+</html>
