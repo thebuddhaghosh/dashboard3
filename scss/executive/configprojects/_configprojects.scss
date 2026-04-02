@@ -1,0 +1,148 @@
+@use '../variable/variable' as *;
+
+:root {
+  --progress-bar-width: 70px;
+  --progress-bar-height: 70px;
+  --font-size: 1rem;
+}
+
+.config-panel-section {
+  .circular-progress {
+    width: var(--progress-bar-width);
+    height: var(--progress-bar-height);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .inner-circle {
+      position: absolute;
+      width: calc(var(--progress-bar-width) - 16px);
+      height: calc(var(--progress-bar-height) - 16px);
+      border-radius: 50%;
+      background-color: lightgrey;
+    }
+    .percentage {
+      position: relative;
+      font-size: var(--font-size);
+      color: rgb(0, 0, 0, 0.8);
+      margin: 0;
+      font-size: 0.8rem;
+      strong {
+        display: block;
+        line-height: 0.9;
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: rgb(0, 0, 0, 0.9);
+      }
+      span {
+        display: inline-block;
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    :root {
+      --progress-bar-width: 60px;
+      --progress-bar-height: 60px;
+      --font-size: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    :root {
+      --progress-bar-width: 50px;
+      --progress-bar-height: 50px;
+      --font-size: 0.9rem;
+    }
+  }
+
+  // ---------------------------------------------------
+  .config-projects-list {
+    .col-navigation {
+      flex: 0 1 450px;
+      /* scroll styling */
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #cfcfcf;
+        &:hover {
+          background: #555;
+        }
+      }
+    }
+    .col-details {
+      flex: 1 1 auto;
+    }
+    .nav-link {
+      padding: 0;
+      &.active {
+        .card {
+          border-right: 8px solid;
+          border-color: $blue;
+        }
+      }
+    }
+    .card {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 22px;
+      border-radius: 0;
+      background-color: rgba($color: $blue, $alpha: 0.05);
+      border: none;
+      .icon {
+        width: 64px;
+        height: 64px;
+        flex: 0 1 64px;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .card-body {
+        text-align: left;
+        padding-left: 24px;
+        flex: 0 1 calc(100% - 64px - 70px);
+        .card-title {
+          font-size: 1.03rem;
+          margin-bottom: 4px;
+          font-weight: 600;
+        }
+        .card-text {
+          font-size: 0.9rem;
+          margin: 0;
+          font-weight: 400;
+        }
+        .progress-wraper {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          .progress-list {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: rgba($color: $dark, $alpha: 0.7);
+            font-weight: 400;
+            strong {
+              font-weight: 700;
+            }
+            &.rank {
+              &::after {
+                content: '';
+                display: inline-block;
+                width: 1px;
+                height: 16px;
+                background-color: rgba($color: $dark, $alpha: 0.2);
+                border-radius: 50%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

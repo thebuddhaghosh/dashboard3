@@ -78,7 +78,7 @@
         <section class="cards-section">
           <div class="row g-3">
             <div class="col-md-2 col-sm-6">
-              <div class="card">
+              <div class="card h-100">
                 <div class="card-body">
                   <h5 class="card-title">Active Users</h5>
                   <p class="card-text"><strong>27</strong> / 75</p>
@@ -86,7 +86,7 @@
               </div>
             </div>
             <div class="col-md-2 col-sm-6">
-              <div class="card">
+              <div class="card h-100">
                 <div class="card-body">
                   <h5 class="card-title">Derived KPIs</h5>
                   <p class="card-text"><strong>45</strong> / 1820</p>
@@ -94,7 +94,7 @@
               </div>
             </div>
             <div class="col-md-2 col-sm-6">
-              <div class="card">
+              <div class="card h-100">
                 <div class="card-body">
                   <h5 class="card-title">Flagship Projects</h5>
                   <p class="card-text"><strong>32</strong> / 12,820</p>
@@ -102,7 +102,7 @@
               </div>
             </div>
             <div class="col-md-2 col-sm-6">
-              <div class="card">
+              <div class="card h-100">
                 <div class="card-body">
                   <h5 class="card-title m-0">Active Users</h5>
                   <small class="target">Target: <span>94</span></small>
@@ -112,6 +112,7 @@
             </div>
             <div class="col-md-4 col-sm-12">
               <div class="card bg-booklet">
+                <img src="img/bookletIcon.png" class="img-fluid booklet-icon" alt="booklet-icon" />
                 <div class="card-body text-white">
                   <h5 class="card-title m-0 text-white">Explore at a glance report</h5>
                   <small class="target text-white">by seeing the booklet, see the latest month booklet here</small>
@@ -126,65 +127,516 @@
         <section class="dist-report-section mt-3">
           <div class="row">
             <div class="col-md-6">
-              <div class="card">
-                <div class="card-header">
+              <div class="card h-100">
+                <div class="card-header d-flex align-items-center justify-content-between">
                   <h5 class="card-title">District Report</h5>
+                  <div class="controls">
+                    <div class="btn-group gap-1">
+                      <button class="btn btn-primary active">Map View</button>
+                      <button class="btn btn-outline-secondary">Top/Bottom</button>
+                    </div>
+                  </div>
                 </div>
                 <div class="card-body">
-                  <div id="up-map-container" style="width: 100%; height: 280px"></div>
+                  <div id="up-map-container" style="width: 100%; height: 320px"></div>
                 </div>
               </div>
             </div>
             <div class="col-md-6">
-              <div class="card">
-                <div class="card-header">
+              <div class="card h-100">
+                <div class="card-header d-flex align-items-center justify-content-between">
                   <h5 class="card-title">Monitoring Progress (Districts)</h5>
+                  <div class="controls">
+                    <div class="btn-group gap-1">
+                      <button class="btn btn-danger active">Laddering</button>
+                      <button class="btn btn-outline-secondary">Leading</button>
+                    </div>
+                  </div>
                 </div>
                 <div class="card-body">
-                  <div id="monitorigProgress" style="width: 100%; height: 280px"></div>
+                  <div id="monitorigProgress" style="width: 100%; height: 320px"></div>
                 </div>
               </div>
             </div>
           </div>
         </section>
         <!-- --------- Configuration Panel Section --------- -->
-        <section class="config-panel-section mt-3">
+        <section class="config-panel-section my-3">
           <div class="card">
             <div class="card-header d-flex align-items-center justify-content-between">
-              <h5 class="card-title">Configuration Panel</h5>
+              <h5 class="card-title">Watchlist View</h5>
               <div class="controls">
                 <div class="btn-group gap-1">
                   <button onclick="updateChart('revenue', this)" class="btn btn-primary active">Top/Bottom</button>
-                  <button onclick="updateChart('development', this)" class="btn btn-primary">Map View</button>
-                  <button onclick="updateChart('law_order', this)" class="btn btn-primary">Officials Details</button>
+                  <button onclick="updateChart('development', this)" class="btn btn-outline-secondary">Map View</button>
+                  <button onclick="updateChart('law_order', this)" class="btn btn-outline-secondary">Officials Details</button>
                 </div>
               </div>
             </div>
             <div class="card-body p-0">
-              <div class="d-flex align-items-start">
-                <div class="nav flex-column nav-pills me-2 col-md-5" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                  <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
-                  <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
-                  <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
-                  <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
+              <div class="config-projects-list d-flex align-items-start">
+                <div class="nav me-2 col-navigation" id="v-pills-tab" role="tablist" aria-orientation="vertical" style="overflow-x: auto; max-height: 480px">
+                  <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                    <div class="card">
+                      <div class="icon">
+                        <img src="img/projIcon.png" alt="project-icon" class="img-fluid" />
+                      </div>
+                      <div class="card-body">
+                        <h6 class="card-title">Project Names written here</h6>
+                        <p class="card-text">Department Name (Sector Name here)</p>
+                        <div class="progress-wraper">
+                          <div class="progress-list rank"><span>Rank : </span> <strong>#1</strong></div>
+                          <div class="progress-list grade"><span>Grade : </span> <strong>C</strong></div>
+                        </div>
+                      </div>
+                      <div class="dqi-wraper">
+                        <div class="circular-progress" title="KPI Score is 30" data-inner-circle-color="white" data-percentage="40" data-progress-color="blue" data-bg-color="grey" style="background: conic-gradient(blue 180deg, grey 0deg)">
+                          <div class="inner-circle" style="background-color: white"></div>
+                          <p class="percentage" style="color: blue"><strong>40</strong>/<span>60</span></p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                  <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                    <div class="card">
+                      <div class="icon">
+                        <img src="img/projIcon.png" alt="project-icon" class="img-fluid" />
+                      </div>
+                      <div class="card-body">
+                        <h6 class="card-title">Project Names written here</h6>
+                        <p class="card-text">Department Name (Sector Name here)</p>
+                        <div class="progress-wraper">
+                          <div class="progress-list rank"><span>Rank : </span> <strong>#1</strong></div>
+                          <div class="progress-list grade"><span>Grade : </span> <strong>C</strong></div>
+                        </div>
+                      </div>
+                      <div class="dqi-wraper">
+                        <div class="circular-progress" title="KPI Score is 30" data-inner-circle-color="white" data-percentage="40" data-progress-color="blue" data-bg-color="grey" style="background: conic-gradient(blue 180deg, grey 0deg)">
+                          <div class="inner-circle" style="background-color: white"></div>
+                          <p class="percentage" style="color: blue"><strong>40</strong>/<span>60</span></p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                  <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                    <div class="card">
+                      <div class="icon">
+                        <img src="img/projIcon.png" alt="project-icon" class="img-fluid" />
+                      </div>
+                      <div class="card-body">
+                        <h6 class="card-title">Project Names written here</h6>
+                        <p class="card-text">Department Name (Sector Name here)</p>
+                        <div class="progress-wraper">
+                          <div class="progress-list rank"><span>Rank : </span> <strong>#1</strong></div>
+                          <div class="progress-list grade"><span>Grade : </span> <strong>C</strong></div>
+                        </div>
+                      </div>
+                      <div class="dqi-wraper">
+                        <div class="circular-progress" title="KPI Score is 30" data-inner-circle-color="white" data-percentage="40" data-progress-color="blue" data-bg-color="grey" style="background: conic-gradient(blue 180deg, grey 0deg)">
+                          <div class="inner-circle" style="background-color: white"></div>
+                          <p class="percentage" style="color: blue"><strong>40</strong>/<span>60</span></p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                  <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                    <div class="card">
+                      <div class="icon">
+                        <img src="img/projIcon.png" alt="project-icon" class="img-fluid" />
+                      </div>
+                      <div class="card-body">
+                        <h6 class="card-title">Project Names written here</h6>
+                        <p class="card-text">Department Name (Sector Name here)</p>
+                        <div class="progress-wraper">
+                          <div class="progress-list rank"><span>Rank : </span> <strong>#1</strong></div>
+                          <div class="progress-list grade"><span>Grade : </span> <strong>C</strong></div>
+                        </div>
+                      </div>
+                      <div class="dqi-wraper">
+                        <div class="circular-progress" title="KPI Score is 30" data-inner-circle-color="white" data-percentage="40" data-progress-color="blue" data-bg-color="grey" style="background: conic-gradient(blue 180deg, grey 0deg)">
+                          <div class="inner-circle" style="background-color: white"></div>
+                          <p class="percentage" style="color: blue"><strong>40</strong>/<span>60</span></p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                  <button class="nav-link" id="v-pills-settingsss-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settingsss" type="button" role="tab" aria-controls="v-pills-settingsss" aria-selected="false">
+                    <div class="card">
+                      <div class="icon">
+                        <img src="img/projIcon.png" alt="project-icon" class="img-fluid" />
+                      </div>
+                      <div class="card-body">
+                        <h6 class="card-title">Project Names written here</h6>
+                        <p class="card-text">Department Name (Sector Name here)</p>
+                        <div class="progress-wraper">
+                          <div class="progress-list rank"><span>Rank : </span> <strong>#1</strong></div>
+                          <div class="progress-list grade"><span>Grade : </span> <strong>C</strong></div>
+                        </div>
+                      </div>
+                      <div class="dqi-wraper">
+                        <div class="circular-progress" title="KPI Score is 30" data-inner-circle-color="white" data-percentage="40" data-progress-color="blue" data-bg-color="grey" style="background: conic-gradient(blue 180deg, grey 0deg)">
+                          <div class="inner-circle" style="background-color: white"></div>
+                          <p class="percentage" style="color: blue"><strong>40</strong>/<span>60</span></p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
                 </div>
-                <div class="tab-content overflow-hidden col-md-7" id="v-pills-tabContent">
+                <div class="tab-content overflow-hidden col-details" id="v-pills-tabContent">
                   <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                    <div id="topBottomChart" style="width: 99%; height: 360px"></div>
+                    <div id="topBottomChart" style="width: 99%; height: 480px"></div>
                   </div>
-                  <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+                  <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                    <div id="mapViewChart" style="width: 99%; height: 480px"></div>
+                  </div>
                   <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
                   <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+                  <div class="tab-pane fade" id="v-pills-settingsss" role="tabpanel" aria-labelledby="v-pills-settingsss-tab">...</div>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <!-- --------- Cards Section --------- -->
+        <!-- --------- bird-eye-view Section --------- -->
+        <section class="bird-eye-view-section my-3">
+          <div class="card">
+            <div class="card-header d-flex align-items-center justify-content-between">
+              <h5 class="card-title">Performance Matrix</h5>
+              <div class="controls">
+                <div class="btn-group gap-1">
+                  <button class="btn btn-outline-secondary">Sector</button>
+                  <button class="btn btn-primary active">Department</button>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="chart-heading d-flex align-items-center justify-content-between mb-3">
+                <h6 class="mb-0">Viewing Overall</h6>
+                <div class="controls">
+                  <div class="btn-group gap-1">
+                    <button class="btn btn-warning active">Overall View</button>
+                    <button class="btn btn-outline-secondary">Ranking</button>
+                    <button class="btn btn-outline-secondary">DQI</button>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-container-wrapper">
+                <div class="row g-3">
+                  <div class="col-md-9">
+                    <div class="card h-100 overflow-hidden">
+                      <div id="performanceMatrix" class="mt-3" style="width: 100%; height: 760px"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="meter-card">
+                      <div id="meterView1" style="width: 100%; height: 180px"></div>
+                    </div>
+                    <div class="meter-card">
+                      <div id="meterView2" style="width: 100%; height: 180px"></div>
+                    </div>
+                    <div class="meter-card">
+                      <div id="meterView3" style="width: 100%; height: 180px"></div>
+                    </div>
+                    <div class="meter-card m-0">
+                      <div id="meterView4" style="width: 100%; height: 180px"></div>
+                    </div>
+                  </div>
+
+                  <!-- ======================= Support Card ======================  -->
+
+                  <div class="col-md-3">
+                    <div class="card support-card under-performers">
+                      <div class="card-header">
+                        <h6 class="card-title m-0">Under Performers</h6>
+                      </div>
+                      <div class="card-body p-0">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th scope="col">Sr.No</th>
+                              <th scope="col">Name</th>
+                              <th scope="col">Rank</th>
+                              <th scope="col">Prev. Rank</th>
+                              <th scope="col">Trend</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>Healthcare</td>
+                              <td>#12</td>
+                              <td>#15</td>
+                              <td>
+                                <span class="badge bg-danger"><i class="fa fa-arrow-down"></i></span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>Education</td>
+                              <td>#18</td>
+                              <td>#20</td>
+                              <td>
+                                <span class="badge bg-danger"><i class="fa fa-arrow-down"></i></span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td>Infrastructure</td>
+                              <td>#22</td>
+                              <td>#25</td>
+                              <td>
+                                <span class="badge bg-danger"><i class="fa fa-arrow-down"></i></span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">4</th>
+                              <td>Healthcare</td>
+                              <td>#12</td>
+                              <td>#15</td>
+                              <td>
+                                <span class="badge bg-danger"><i class="fa fa-arrow-down"></i></span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">5</th>
+                              <td>Healthcare</td>
+                              <td>#12</td>
+                              <td>#15</td>
+                              <td>
+                                <span class="badge bg-danger"><i class="fa fa-arrow-down"></i></span>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card support-card leaders">
+                      <div class="card-header">
+                        <h6 class="card-title m-0">Leaders</h6>
+                      </div>
+                      <div class="card-body p-0">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th scope="col">Sr.No</th>
+                              <th scope="col">Name</th>
+                              <th scope="col">Rank</th>
+                              <th scope="col">Prev. Rank</th>
+                              <th scope="col">Trend</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>Healthcare</td>
+                              <td>#12</td>
+                              <td>#15</td>
+                              <td>
+                                <span class="badge bg-danger"><i class="fa fa-arrow-down"></i></span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>Education</td>
+                              <td>#18</td>
+                              <td>#20</td>
+                              <td>
+                                <span class="badge bg-danger"><i class="fa fa-arrow-down"></i></span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td>Infrastructure</td>
+                              <td>#22</td>
+                              <td>#25</td>
+                              <td>
+                                <span class="badge bg-danger"><i class="fa fa-arrow-down"></i></span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">4</th>
+                              <td>Healthcare</td>
+                              <td>#12</td>
+                              <td>#15</td>
+                              <td>
+                                <span class="badge bg-danger"><i class="fa fa-arrow-down"></i></span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">5</th>
+                              <td>Healthcare</td>
+                              <td>#12</td>
+                              <td>#15</td>
+                              <td>
+                                <span class="badge bg-danger"><i class="fa fa-arrow-down"></i></span>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card support-card inconsistent">
+                      <div class="card-header">
+                        <h6 class="card-title m-0">Inconsistent Performers</h6>
+                      </div>
+                      <div class="card-body p-0">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th scope="col">Sr.No</th>
+                              <th scope="col">Name</th>
+                              <th scope="col">Rank</th>
+                              <th scope="col">Prev. Rank</th>
+                              <th scope="col">Trend</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>Healthcare</td>
+                              <td>#12</td>
+                              <td>#15</td>
+                              <td>
+                                <span class="badge bg-danger"><i class="fa fa-arrow-down"></i></span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>Education</td>
+                              <td>#18</td>
+                              <td>#20</td>
+                              <td>
+                                <span class="badge bg-danger"><i class="fa fa-arrow-down"></i></span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td>Infrastructure</td>
+                              <td>#22</td>
+                              <td>#25</td>
+                              <td>
+                                <span class="badge bg-danger"><i class="fa fa-arrow-down"></i></span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">4</th>
+                              <td>Healthcare</td>
+                              <td>#12</td>
+                              <td>#15</td>
+                              <td>
+                                <span class="badge bg-danger"><i class="fa fa-arrow-down"></i></span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">5</th>
+                              <td>Healthcare</td>
+                              <td>#12</td>
+                              <td>#15</td>
+                              <td>
+                                <span class="badge bg-danger"><i class="fa fa-arrow-down"></i></span>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card support-card laddgers">
+                      <div class="card-header">
+                        <h6 class="card-title m-0">laddgers</h6>
+                      </div>
+                      <div class="card-body p-0">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th scope="col">Sr.No</th>
+                              <th scope="col">Name</th>
+                              <th scope="col">Rank</th>
+                              <th scope="col">Prev. Rank</th>
+                              <th scope="col">Trend</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>Healthcare</td>
+                              <td>#12</td>
+                              <td>#15</td>
+                              <td>
+                                <span class="badge bg-danger"><i class="fa fa-arrow-down"></i></span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>Education</td>
+                              <td>#18</td>
+                              <td>#20</td>
+                              <td>
+                                <span class="badge bg-danger"><i class="fa fa-arrow-down"></i></span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td>Infrastructure</td>
+                              <td>#22</td>
+                              <td>#25</td>
+                              <td>
+                                <span class="badge bg-danger"><i class="fa fa-arrow-down"></i></span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">4</th>
+                              <td>Healthcare</td>
+                              <td>#12</td>
+                              <td>#15</td>
+                              <td>
+                                <span class="badge bg-danger"><i class="fa fa-arrow-down"></i></span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">5</th>
+                              <td>Healthcare</td>
+                              <td>#12</td>
+                              <td>#15</td>
+                              <td>
+                                <span class="badge bg-danger"><i class="fa fa-arrow-down"></i></span>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
-
+    <!-- Bootstrap Modal -->
+    <div class="modal fade" id="mapModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">District Info</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <p id="modalContent"></p>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!--  kpi progress circular bar script -->
+    <script src="./js/kpiProgress.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
 
@@ -193,14 +645,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/11.4.0/modules/heatmap.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/11.4.0/highmaps.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/11.4.0/modules/map.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/11.4.0/modules/exporting.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/11.4.0/modules/accessibility.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/11.4.0/highcharts-more.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/11.4.0/modules/export-data.js"></script>
 
     <!-- Export dependencies -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+
+    <!-- UP Map View Chart -->
+    <script src="./js/executivejs/upmap.js"></script>
+
+    <!-- UP Map Tab View Chart -->
+    <script src="./js/executivejs/upmapTabbed.js"></script>
 
     <!-- Monthly Progress Chart -->
     <script>
@@ -217,7 +679,12 @@
           categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
           title: null,
         },
-
+        credits: {
+          enabled: false,
+        },
+        exporting: {
+          enabled: false,
+        },
         yAxis: {
           categories: ['Prayagraj', 'Gorakhpur', 'Jaunpur', 'Pratapgarh', 'Deoria'],
           title: null,
@@ -332,127 +799,7 @@
       });
     </script>
 
-    <!-- UP Map Chart -->
-    <script>
-      document.addEventListener('DOMContentLoaded', async function () {
-        // 1. Fetch a highly reliable all-India district GeoJSON
-        // const mapUrl = 'https://raw.githubusercontent.com/geohacker/india/master/district/india_district.geojson';
-        const mapUrl = './js/india_district.geojson';
-
-        try {
-          const response = await fetch(mapUrl);
-          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-
-          const fullIndiaTopology = await response.json();
-
-          // 2. Dynamically filter the GeoJSON to ONLY include Uttar Pradesh districts
-          // In this dataset, NAME_1 is the State, and NAME_2 is the District.
-          const upFeatures = fullIndiaTopology.features.filter((feature) => feature.properties.NAME_1 === 'Uttar Pradesh');
-
-          // Reconstruct a valid GeoJSON object just for UP
-          const upTopology = {
-            type: 'FeatureCollection',
-            features: upFeatures,
-          };
-
-          if (upFeatures.length === 0) throw new Error('Could not find Uttar Pradesh in the dataset.');
-
-          // 3. Generate mock ranking data
-          const data = upTopology.features.map((feature) => {
-            return [
-              feature.properties.NAME_2, // The district name
-              Math.floor(Math.random() * 75) + 1, // Random rank between 1 and 75
-            ];
-          });
-
-          // 4. Initialize Highmaps
-          const chart = Highcharts.mapChart('up-map-container', {
-            chart: {
-              map: upTopology,
-              backgroundColor: 'transparent',
-            },
-            title: { text: null },
-            mapNavigation: {
-              enabled: false,
-            },
-            legend: {
-              enabled: false,
-            },
-            tooltip: {
-              headerFormat: '',
-              pointFormat: '<b>{point.NAME_2}</b><br/>Rank: {point.value}',
-            },
-            colorAxis: {
-              dataClasses: [
-                { to: 10, color: '#00B050' }, // Green
-                { from: 11, to: 20, color: '#92D050' }, // Light Green
-                { from: 21, to: 30, color: '#00B0F0' }, // Blue
-                { from: 31, to: 40, color: '#9DC3E6' }, // Light Blue
-                { from: 41, to: 50, color: '#FFFF00' }, // Yellow
-                { from: 51, color: '#FF0000' }, // Red
-              ],
-            },
-            series: [
-              {
-                data: data,
-                keys: ['NAME_2', 'value'], // Match our generated data to the NAME_2 property
-                joinBy: 'NAME_2',
-                name: 'District Rank',
-                borderColor: '#ffffff',
-                borderWidth: 0.5,
-                states: {
-                  hover: {
-                    color: '#6c757d',
-                    brightness: 0,
-                  },
-                },
-                point: {
-                  events: {
-                    click: function () {
-                      alert(`You clicked on ${this.properties.NAME_2}. Current Rank: ${this.value}`);
-                    },
-                  },
-                },
-              },
-            ],
-          });
-
-          // 5. Handle UI Button Clicks
-          const btns = document.querySelectorAll('#view-toggles .btn');
-          btns.forEach((btn) => {
-            btn.addEventListener('click', function () {
-              btns.forEach((b) => {
-                b.classList.remove('btn-map-view');
-                b.classList.add('btn-toggle-light');
-              });
-              this.classList.remove('btn-toggle-light');
-              this.classList.add('btn-map-view');
-            });
-          });
-
-          document.getElementById('expand-btn').addEventListener('click', function () {
-            if (chart.fullscreen) {
-              chart.fullscreen.toggle();
-            } else {
-              alert('Fullscreen module required, or implement custom modal expansion.');
-            }
-          });
-        } catch (error) {
-          console.error('Error loading map:', error);
-          document.getElementById('up-map-container').innerHTML = `
-                <div class="alert alert-danger d-flex align-items-center justify-content-center h-100" role="alert">
-                    <div>
-                        <strong>Map Data Unavailable:</strong><br> 
-                        Could not fetch the GeoJSON. If you are developing locally, ensure you aren't being blocked by CORS. <br>
-                        <small class="text-muted">${error.message}</small>
-                    </div>
-                </div>`;
-        }
-      });
-    </script>
-
     <!-- topBottomChart -->
-
     <script>
       const topData = {
         revenue: {
@@ -662,5 +1009,13 @@
         renderChart('revenue');
       });
     </script>
+    <!-- scatter bubble chart -->
+    <script src="./js/executivejs/scatbubbol.js"></script>
+
+    <!-- 
+    meter chart 
+     // requires highcharts-more.js and export-data.js 
+     -->
+    <script src="./js/executivejs/meterchartjs.js"></script>
   </body>
 </html>

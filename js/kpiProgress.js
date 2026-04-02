@@ -17,7 +17,7 @@ Array.from(circularProgress).forEach((progressBar) => {
     startValue++;
 
     // Update text
-    progressValue.innerHTML  = `<span>${startValue}</span>/<strong>${maxValue}</strong>`;
+    progressValue.innerHTML  = `<strong>${startValue}</strong>/<span>${maxValue}</span>`;
     progressValue.style.color = progressColor;
 
     // Inner circle color

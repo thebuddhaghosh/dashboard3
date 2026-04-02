@@ -228,21 +228,26 @@
 }
 
 .card {
-  height: 100%;
-  background-color: #ffffff;
   border-radius: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(52, 58, 64, 0.08);
+  box-shadow: 0px 2px 4px rgba(52, 58, 64, 0.05);
 }
 .card .card-header {
   padding: 12px 16px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(52, 58, 64, 0.08);
 }
 .card .card-header .card-title {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0;
-  color: #000000;
+  color: #343a40;
+  text-transform: uppercase;
+}
+.card .card-header .btn {
+  padding: 4px 12px !important;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 .card .card-body {
   padding: 16px;
@@ -253,24 +258,34 @@
 }
 .card .card-body .card-text {
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.7);
+  color: rgba(52, 58, 64, 0.7);
   font-weight: 600;
 }
 .card .card-body .card-text strong {
   font-size: 22px;
   font-weight: 800;
-  color: #000000;
+  color: #343a40;
 }
 .card .card-body .target {
   font-size: 12px;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(52, 58, 64, 0.5);
   font-weight: 400;
 }
 .card .card-body .target span {
   display: inline-block;
-  color: rgba(0, 0, 0, 0.9);
+  color: rgba(52, 58, 64, 0.9);
 }
 
+.bg-booklet {
+  position: relative;
+}
+.bg-booklet .booklet-icon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 90px;
+  height: 90px;
+}
 .bg-booklet .card-body .card-text {
   font-size: 12px;
   font-weight: 400;
@@ -1110,4 +1125,176 @@
 }
 .executive-layout .gran-view {
   font-size: 14px;
+}
+
+:root {
+  --progress-bar-width: 70px;
+  --progress-bar-height: 70px;
+  --font-size: 1rem;
+}
+
+.config-panel-section .circular-progress {
+  width: var(--progress-bar-width);
+  height: var(--progress-bar-height);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.config-panel-section .circular-progress .inner-circle {
+  position: absolute;
+  width: calc(var(--progress-bar-width) - 16px);
+  height: calc(var(--progress-bar-height) - 16px);
+  border-radius: 50%;
+  background-color: lightgrey;
+}
+.config-panel-section .circular-progress .percentage {
+  position: relative;
+  font-size: var(--font-size);
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0;
+  font-size: 0.8rem;
+}
+.config-panel-section .circular-progress .percentage strong {
+  display: block;
+  line-height: 0.9;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.9);
+}
+.config-panel-section .circular-progress .percentage span {
+  display: inline-block;
+}
+@media screen and (max-width: 800px) {
+  .config-panel-section :root {
+    --progress-bar-width: 60px;
+    --progress-bar-height: 60px;
+    --font-size: 1rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .config-panel-section :root {
+    --progress-bar-width: 50px;
+    --progress-bar-height: 50px;
+    --font-size: 0.9rem;
+  }
+}
+.config-panel-section .config-projects-list .col-navigation {
+  flex: 0 1 450px;
+  /* scroll styling */
+}
+.config-panel-section .config-projects-list .col-navigation::-webkit-scrollbar {
+  width: 4px;
+}
+.config-panel-section .config-projects-list .col-navigation::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.config-panel-section .config-projects-list .col-navigation::-webkit-scrollbar-thumb {
+  background: #cfcfcf;
+}
+.config-panel-section .config-projects-list .col-navigation::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.config-panel-section .config-projects-list .col-details {
+  flex: 1 1 auto;
+}
+.config-panel-section .config-projects-list .nav-link {
+  padding: 0;
+}
+.config-panel-section .config-projects-list .nav-link.active .card {
+  border-right: 8px solid;
+  border-color: #007bff;
+}
+.config-panel-section .config-projects-list .card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 22px;
+  border-radius: 0;
+  background-color: rgba(0, 123, 255, 0.05);
+  border: none;
+}
+.config-panel-section .config-projects-list .card .icon {
+  width: 64px;
+  height: 64px;
+  flex: 0 1 64px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.config-panel-section .config-projects-list .card .card-body {
+  text-align: left;
+  padding-left: 24px;
+  flex: 0 1 calc(100% - 64px - 70px);
+}
+.config-panel-section .config-projects-list .card .card-body .card-title {
+  font-size: 1.03rem;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.config-panel-section .config-projects-list .card .card-body .card-text {
+  font-size: 0.9rem;
+  margin: 0;
+  font-weight: 400;
+}
+.config-panel-section .config-projects-list .card .card-body .progress-wraper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.config-panel-section .config-projects-list .card .card-body .progress-wraper .progress-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(52, 58, 64, 0.7);
+  font-weight: 400;
+}
+.config-panel-section .config-projects-list .card .card-body .progress-wraper .progress-list strong {
+  font-weight: 700;
+}
+.config-panel-section .config-projects-list .card .card-body .progress-wraper .progress-list.rank::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 16px;
+  background-color: rgba(52, 58, 64, 0.2);
+  border-radius: 50%;
+}
+
+.bird-eye-view-section .chart-heading .btn {
+  padding: 4px 12px !important;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.bird-eye-view-section .chart-container-wrapper .meter-card {
+  overflow: hidden;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(52, 58, 64, 0.08);
+  box-shadow: 0px 2px 4px rgba(52, 58, 64, 0.05);
+}
+.bird-eye-view-section .support-card {
+  overflow: hidden;
+}
+.bird-eye-view-section .support-card.under-performers {
+  background-color: rgba(129, 129, 255, 0.1);
+}
+.bird-eye-view-section .support-card.inconsistent {
+  background-color: rgba(0, 195, 195, 0.1);
+}
+.bird-eye-view-section .support-card.leaders {
+  background-color: rgba(50, 200, 106, 0.1);
+}
+.bird-eye-view-section .support-card.laddgers {
+  background-color: rgba(254, 0, 0, 0.1);
+}
+.bird-eye-view-section .support-card .table {
+  margin-bottom: 0;
+}
+.bird-eye-view-section .support-card .table tr,
+.bird-eye-view-section .support-card .table th,
+.bird-eye-view-section .support-card .table td {
+  font-size: 12px;
 }/*# sourceMappingURL=executive.css.map */

@@ -1,8 +1,6 @@
 @use '../variable/variable' as *;
 
 .card {
-  height: 100%;
-  background-color: $white;
   border-radius: 14px;
   border: 1px solid rgba($color: $dark, $alpha: 0.08);
   box-shadow: 0px 2px 4px rgba($color: $dark, $alpha: 0.05);
@@ -11,9 +9,16 @@
     border-bottom: 1px solid rgba($color: $dark, $alpha: 0.08);
     .card-title {
       font-size: 16px;
-      font-weight: 600;
+      font-weight: 700;
       margin: 0;
       color: $dark;
+      text-transform: uppercase;
+    }
+    .btn {
+      padding: 4px 12px !important;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
     }
   }
   .card-body {
@@ -45,6 +50,14 @@
 }
 
 .bg-booklet {
+  position: relative;
+  .booklet-icon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 90px;
+    height: 90px;
+  }
   .card-body {
     .card-text {
       font-size: 12px;

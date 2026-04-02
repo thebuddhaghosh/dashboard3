@@ -8,3 +8,47 @@
 
 @use './card/card';
 @use './global/all';
+@use './configprojects/configprojects';
+
+.bird-eye-view-section {
+  .chart-heading {
+    .btn {
+      padding: 4px 12px !important;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+  .chart-container-wrapper {
+    .meter-card {
+      overflow: hidden;
+      margin-bottom: 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(52, 58, 64, 0.08);
+      box-shadow: 0px 2px 4px rgba(52, 58, 64, 0.05);
+    }
+  }
+  .support-card {
+    overflow: hidden;
+    &.under-performers {
+      background-color: rgba(129, 129, 255, 0.1);
+    }
+    &.inconsistent {
+      background-color: rgba(0, 195, 195, 0.1);
+    }
+    &.leaders {
+      background-color: rgba(50, 200, 106, 0.1);
+    }
+    &.laddgers {
+      background-color: rgba(254, 0, 0, 0.1);
+    }
+    .table {
+      margin-bottom: 0;
+      tr,
+      th,
+      td {
+        font-size: 12px;
+      }
+    }
+  }
+}
