@@ -5,10 +5,10 @@
 @use './base/typography';
 @use './base/utilities';
 
+@use './components/cards';
 @use './components/sidebar';
 @use './components/formsSetting';
 @use './components/navbar';
-@use './components/cards';
 @use './components/info-card';
 @use './components/table';
 @use './components/carousal';
@@ -16,6 +16,8 @@
 @use './components/kpiprogress';
 @use './components/gridview';
 @use './components/gradeFilter';
+@use './components/detailpage';
+@use './components/kpicard';
 
 @use './layout/dashboard';
 @use './layout/grid';

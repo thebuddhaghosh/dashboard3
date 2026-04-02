@@ -1,0 +1,39 @@
+// @use 'sass:math';
+@use '../variable/variable' as *;
+
+@for $i from 0 through 100 {
+  .dark-bg-#{$i} {
+    background-color: rgba(0, 0, 0, $i * 0.01);
+  }
+}
+
+@for $i from 0 through 100 {
+  .dark-text-#{$i} {
+    color: rgba(0, 0, 0, $i * 0.01);
+  }
+}
+
+.seprator {
+  width: 100%;
+  height: 1px;
+  margin: 8px 0;
+}
+
+.grad-white {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.bg-booklet {
+  background: rgba(0, 59, 153, 1);
+  background: linear-gradient(180deg, rgba(0, 98, 255, 1) 0%, rgba(0, 59, 153, 1) 100%);
+}
+
+.executive-layout {
+  .top-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .gran-view {
+    font-size: 14px;
+  }
+}

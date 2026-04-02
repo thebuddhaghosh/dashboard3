@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <title>UPCM Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet" />
+    <!-- OwlCarousel2 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+    <link href="https://cdn.datatables.net/select/1.2.7/css/select.dataTables.min.css" />
+    <!-- Custom CSS -->
+    <!-- <link rel="stylesheet" href="./scss/main.css" /> -->
+    <link rel="stylesheet" href="./scss/executive/executive.css" />
+  </head>
+  <body>
+    <div class="layout container-fluid executive-layout">
+      <header class="header topbar">
+        <div class="header__left me-3">UP CM DASHBOARD</div>
+
+        <div class="header__search">
+          <div class="search-wrap">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" class="form-control" placeholder="Search Anything..." />
+          </div>
+        </div>
+
+        <div class="topbar-actions d-flex align-items-center gap-4">
+          <span class="date d-flex align-items-center gap-1"><i class="fa-regular fa-clock"></i><span id="dateToday">15 Oct, 2025</span></span>
+          <div class="profile d-flex align-items-center gap-2">
+            <img src="./img/avtar.png" alt="avtar" class="img-fluid avatar" />
+            <div class="dropdown profile-dropdown">
+              <a class="btn bg-transparent border-0 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> John Smith </a>
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="fa-solid fa-gear"></i> Setting</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="fa-solid fa-power-off"></i> Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      <aside class="sidebar">
+        <div class="top-item">
+          <nav class="nav flex-column">
+            <a class="nav-link active" href="#"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+            <a class="nav-link" href="#"><i class="fa-solid fa-ranking-star"></i> Leaderboard</a>
+            <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i> Orders</a>
+            <a class="nav-link" href="#"><i class="fa-solid fa-chart-line"></i> Products</a>
+            <a class="nav-link" href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+          </nav>
+        </div>
+        <div class="card download-app-card">
+          <img src="img/applogo.png" class="img-fluid app-ico" alt="download-app" />
+          <h6 class="card-title mb-3">Darpan NexGen App</h6>
+          <p class="card-text mb-4">Get access to all you reports and information on your own phone.</p>
+          <a href="#" class="btn btn-primary btn-sm">Get App</a>
+        </div>
+      </aside>
+      <main class="main py-0">
+        <!-- --------- Header --------- -->
+        <nav class="d-flex align-items-center justify-content-between flex-wrap">
+          <h3 class="top-title">One View Dashboard</h3>
+          <div class="gran-view">Data Displayed: <span>State - Uttar Pradesh</span></div>
+        </nav>
+        <!-- --------- Cards Section --------- -->
+        <section class="cards-section">
+          <div class="row g-3">
+            <div class="col-md-2 col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Active Users</h5>
+                  <p class="card-text"><strong>27</strong> / 75</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Derived KPIs</h5>
+                  <p class="card-text"><strong>45</strong> / 1820</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Flagship Projects</h5>
+                  <p class="card-text"><strong>32</strong> / 12,820</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title m-0">Active Users</h5>
+                  <small class="target">Target: <span>94</span></small>
+                  <p class="card-text"><strong>27</strong> / 75</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="card bg-booklet">
+                <div class="card-body text-white">
+                  <h5 class="card-title m-0 text-white">Explore at a glance report</h5>
+                  <small class="target text-white">by seeing the booklet, see the latest month booklet here</small>
+                  <div class="seprator grad-white"></div>
+                  <p class="card-text text-white">Generate On : <span class="text-white">25 Sep, 2025</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- --------- District Report Section --------- -->
+        <section class="dist-report-section mt-3">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title">District Report</h5>
+                </div>
+                <div class="card-body">
+                  <div id="up-map-container" style="width: 100%; height: 280px"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title">Monitoring Progress (Districts)</h5>
+                </div>
+                <div class="card-body">
+                  <div id="monitorigProgress" style="width: 100%; height: 280px"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- --------- Configuration Panel Section --------- -->
+        <section class="config-panel-section mt-3">
+          <div class="card">
+            <div class="card-header d-flex align-items-center justify-content-between">
+              <h5 class="card-title">Configuration Panel</h5>
+              <div class="controls">
+                <div class="btn-group gap-1">
+                  <button onclick="updateChart('revenue', this)" class="btn btn-primary active">Top/Bottom</button>
+                  <button onclick="updateChart('development', this)" class="btn btn-primary">Map View</button>
+                  <button onclick="updateChart('law_order', this)" class="btn btn-primary">Officials Details</button>
+                </div>
+              </div>
+            </div>
+            <div class="card-body p-0">
+              <div class="d-flex align-items-start">
+                <div class="nav flex-column nav-pills me-2 col-md-5" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                  <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
+                  <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
+                  <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
+                  <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
+                </div>
+                <div class="tab-content overflow-hidden col-md-7" id="v-pills-tabContent">
+                  <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                    <div id="topBottomChart" style="width: 99%; height: 360px"></div>
+                  </div>
+                  <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+                  <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+                  <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- --------- Cards Section --------- -->
+      </main>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+
+    <!-- Highcharts dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/11.4.0/highcharts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/11.4.0/modules/heatmap.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/11.4.0/highmaps.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/11.4.0/modules/exporting.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/11.4.0/modules/accessibility.js"></script>
+
+    <!-- Export dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+
+    <!-- Monthly Progress Chart -->
+    <script>
+      Highcharts.chart('monitorigProgress', {
+        chart: {
+          type: 'heatmap',
+        },
+
+        title: {
+          text: 'Monitoring Progress (Districts)',
+        },
+
+        xAxis: {
+          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+          title: null,
+        },
+
+        yAxis: {
+          categories: ['Prayagraj', 'Gorakhpur', 'Jaunpur', 'Pratapgarh', 'Deoria'],
+          title: null,
+          reversed: true,
+        },
+
+        colorAxis: {
+          min: 0,
+          max: 1,
+          stops: [
+            [0, '#F2F2F2'], // Lagging (grey)
+            [1, '#ff0015'], // Leading (red)
+          ],
+        },
+
+        legend: {
+          align: 'right',
+          layout: 'vertical',
+          verticalAlign: 'top',
+        },
+
+        tooltip: {
+          formatter: function () {
+            const status = this.point.value === 1 ? 'Leading' : 'Lagging';
+            return `<b>${this.series.yAxis.categories[this.point.y]}</b><br>
+                    ${this.series.xAxis.categories[this.point.x]}: ${status}`;
+          },
+        },
+
+        series: [
+          {
+            name: 'Progress',
+            borderWidth: 6,
+            borderColor: '#ffffff',
+            data: [
+              // Prayagraj (all leading)
+              [0, 0, 1],
+              [1, 0, 1],
+              [2, 0, 1],
+              [3, 0, 1],
+              [4, 0, 1],
+              [5, 0, 1],
+              [6, 0, 1],
+              [7, 0, 1],
+              [8, 0, 1],
+              [9, 0, 1],
+              [10, 0, 1],
+              [11, 0, 1],
+
+              // Gorakhpur
+              [0, 1, 1],
+              [1, 1, 1],
+              [2, 1, 1],
+              [3, 1, 1],
+              [4, 1, 1],
+              [5, 1, 1],
+              [6, 1, 1],
+              [7, 1, 1],
+              [8, 1, 0],
+              [9, 1, 1],
+              [10, 1, 1],
+              [11, 1, 1],
+
+              // Jaunpur
+              [0, 2, 1],
+              [1, 2, 1],
+              [2, 2, 1],
+              [3, 2, 0],
+              [4, 2, 1],
+              [5, 2, 1],
+              [6, 2, 1],
+              [7, 2, 1],
+              [8, 2, 0],
+              [9, 2, 0],
+              [10, 2, 1],
+              [11, 2, 1],
+
+              // Pratapgarh
+              [0, 3, 1],
+              [1, 3, 1],
+              [2, 3, 1],
+              [3, 3, 1],
+              [4, 3, 1],
+              [5, 3, 1],
+              [6, 3, 1],
+              [7, 3, 0],
+              [8, 3, 0],
+              [9, 3, 0],
+              [10, 3, 0],
+              [11, 3, 0],
+
+              // Deoria
+              [0, 4, 1],
+              [1, 4, 1],
+              [2, 4, 1],
+              [3, 4, 1],
+              [4, 4, 1],
+              [5, 4, 0],
+              [6, 4, 0],
+              [7, 4, 0],
+              [8, 4, 0],
+              [9, 4, 0],
+              [10, 4, 0],
+              [11, 4, 0],
+            ],
+
+            dataLabels: {
+              enabled: false,
+            },
+          },
+        ],
+      });
+    </script>
+
+    <!-- UP Map Chart -->
+    <script>
+      document.addEventListener('DOMContentLoaded', async function () {
+        // 1. Fetch a highly reliable all-India district GeoJSON
+        // const mapUrl = 'https://raw.githubusercontent.com/geohacker/india/master/district/india_district.geojson';
+        const mapUrl = './js/india_district.geojson';
+
+        try {
+          const response = await fetch(mapUrl);
+          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+          const fullIndiaTopology = await response.json();
+
+          // 2. Dynamically filter the GeoJSON to ONLY include Uttar Pradesh districts
+          // In this dataset, NAME_1 is the State, and NAME_2 is the District.
+          const upFeatures = fullIndiaTopology.features.filter((feature) => feature.properties.NAME_1 === 'Uttar Pradesh');
+
+          // Reconstruct a valid GeoJSON object just for UP
+          const upTopology = {
+            type: 'FeatureCollection',
+            features: upFeatures,
+          };
+
+          if (upFeatures.length === 0) throw new Error('Could not find Uttar Pradesh in the dataset.');
+
+          // 3. Generate mock ranking data
+          const data = upTopology.features.map((feature) => {
+            return [
+              feature.properties.NAME_2, // The district name
+              Math.floor(Math.random() * 75) + 1, // Random rank between 1 and 75
+            ];
+          });
+
+          // 4. Initialize Highmaps
+          const chart = Highcharts.mapChart('up-map-container', {
+            chart: {
+              map: upTopology,
+              backgroundColor: 'transparent',
+            },
+            title: { text: null },
+            mapNavigation: {
+              enabled: false,
+            },
+            legend: {
+              enabled: false,
+            },
+            tooltip: {
+              headerFormat: '',
+              pointFormat: '<b>{point.NAME_2}</b><br/>Rank: {point.value}',
+            },
+            colorAxis: {
+              dataClasses: [
+                { to: 10, color: '#00B050' }, // Green
+                { from: 11, to: 20, color: '#92D050' }, // Light Green
+                { from: 21, to: 30, color: '#00B0F0' }, // Blue
+                { from: 31, to: 40, color: '#9DC3E6' }, // Light Blue
+                { from: 41, to: 50, color: '#FFFF00' }, // Yellow
+                { from: 51, color: '#FF0000' }, // Red
+              ],
+            },
+            series: [
+              {
+                data: data,
+                keys: ['NAME_2', 'value'], // Match our generated data to the NAME_2 property
+                joinBy: 'NAME_2',
+                name: 'District Rank',
+                borderColor: '#ffffff',
+                borderWidth: 0.5,
+                states: {
+                  hover: {
+                    color: '#6c757d',
+                    brightness: 0,
+                  },
+                },
+                point: {
+                  events: {
+                    click: function () {
+                      alert(`You clicked on ${this.properties.NAME_2}. Current Rank: ${this.value}`);
+                    },
+                  },
+                },
+              },
+            ],
+          });
+
+          // 5. Handle UI Button Clicks
+          const btns = document.querySelectorAll('#view-toggles .btn');
+          btns.forEach((btn) => {
+            btn.addEventListener('click', function () {
+              btns.forEach((b) => {
+                b.classList.remove('btn-map-view');
+                b.classList.add('btn-toggle-light');
+              });
+              this.classList.remove('btn-toggle-light');
+              this.classList.add('btn-map-view');
+            });
+          });
+
+          document.getElementById('expand-btn').addEventListener('click', function () {
+            if (chart.fullscreen) {
+              chart.fullscreen.toggle();
+            } else {
+              alert('Fullscreen module required, or implement custom modal expansion.');
+            }
+          });
+        } catch (error) {
+          console.error('Error loading map:', error);
+          document.getElementById('up-map-container').innerHTML = `
+                <div class="alert alert-danger d-flex align-items-center justify-content-center h-100" role="alert">
+                    <div>
+                        <strong>Map Data Unavailable:</strong><br> 
+                        Could not fetch the GeoJSON. If you are developing locally, ensure you aren't being blocked by CORS. <br>
+                        <small class="text-muted">${error.message}</small>
+                    </div>
+                </div>`;
+        }
+      });
+    </script>
+
+    <!-- topBottomChart -->
+
+    <script>
+      const topData = {
+        revenue: {
+          category: 'Revenue / GSDP contribution',
+          districts: [
+            { name: 'Gautam Buddh Nagar (Noida)', value: 285000, unit: '₹ Crore' },
+            { name: 'Lucknow', value: 192000, unit: '₹ Crore' },
+            { name: 'Agra', value: 168000, unit: '₹ Crore' },
+            { name: 'Prayagraj', value: 145000, unit: '₹ Crore' },
+            { name: 'Meerut', value: 132000, unit: '₹ Crore' },
+          ],
+          source: 'District GDP estimates 2023-24 scaled to 2026 trends [web:13][web:14][web:16]',
+        },
+        development: {
+          category: 'Development Index (GDP + Infrastructure Score)',
+          districts: [
+            { name: 'Gautam Buddh Nagar (Noida)', value: 92, unit: 'Index (out of 100)' },
+            { name: 'Lucknow', value: 87, unit: 'Index (out of 100)' },
+            { name: 'Ghaziabad', value: 82, unit: 'Index (out of 100)' },
+            { name: 'Agra', value: 78, unit: 'Index (out of 100)' },
+            { name: 'Prayagraj', value: 74, unit: 'Index (out of 100)' },
+          ],
+          source: 'Composite development metrics based on GDP growth, infrastructure spend [web:12][web:13]',
+        },
+        law_order: {
+          category: 'Law & Order Performance Score',
+          districts: [
+            { name: 'Lucknow', value: 94, unit: 'Score (out of 100)' },
+            { name: 'Gautam Buddh Nagar (Noida)', value: 91, unit: 'Score (out of 100)' },
+            { name: 'Ghaziabad', value: 88, unit: 'Score (out of 100)' },
+            { name: 'Kanpur Nagar', value: 85, unit: 'Score (out of 100)' },
+            { name: 'Varanasi', value: 82, unit: 'Score (out of 100)' },
+          ],
+          source: 'Policing infrastructure + crime reduction metrics [web:13][web:15]',
+        },
+      };
+      const bottomData = {
+        revenue: {
+          category: 'Revenue / GSDP contribution (Bottom 5)',
+          districts: [
+            { name: 'Shravasti', value: 8500, unit: '₹ Crore' },
+            { name: 'Balrampur', value: 9200, unit: '₹ Crore' },
+            { name: 'Bahraich', value: 9800, unit: '₹ Crore' },
+            { name: 'Siddharthnagar', value: 10500, unit: '₹ Crore' },
+            { name: 'Maharajganj', value: 11200, unit: '₹ Crore' },
+          ],
+          source: 'District GDP estimates 2023-24 scaled to 2026 trends [web:13][web:14][web:16]',
+        },
+        development: {
+          category: 'Development Index (GDP + Infrastructure Score, Bottom 5)',
+          districts: [
+            { name: 'Shravasti', value: 28, unit: 'Index (out of 100)' },
+            { name: 'Balrampur', value: 32, unit: 'Index (out of 100)' },
+            { name: 'Bahraich', value: 35, unit: 'Index (out of 100)' },
+            { name: 'Siddharthnagar', value: 38, unit: 'Index (out of 100)' },
+            { name: 'Chandauli', value: 42, unit: 'Index (out of 100)' },
+          ],
+          source: 'Composite development metrics based on GDP growth, infrastructure spend [web:12][web:13]',
+        },
+        law_order: {
+          category: 'Law & Order Performance Score (Bottom 5)',
+          districts: [
+            { name: 'Bahraich', value: 45, unit: 'Score (out of 100)' },
+            { name: 'Balrampur', value: 48, unit: 'Score (out of 100)' },
+            { name: 'Shravasti', value: 51, unit: 'Score (out of 100)' },
+            { name: 'Siddharthnagar', value: 54, unit: 'Score (out of 100)' },
+            { name: 'Sonbhadra', value: 57, unit: 'Score (out of 100)' },
+          ],
+          source: 'Policing infrastructure + crime reduction metrics [web:13][web:15]',
+        },
+      };
+      let chart;
+
+      function prepareData(category) {
+        const top = topData[category].districts;
+        const bottom = bottomData[category].districts;
+
+        const categories = [];
+        const data = [];
+
+        // Top 5 (Green)
+        top.forEach((d) => {
+          categories.push(d.name);
+          data.push({
+            y: d.value,
+            color: '#28a745',
+          });
+        });
+
+        // Bottom 5 (Red)
+        bottom.forEach((d) => {
+          categories.push(d.name);
+          data.push({
+            y: d.value,
+            color: '#dc3545',
+          });
+        });
+
+        return {
+          categories,
+          data,
+          unit: top[0].unit,
+          title: topData[category].category,
+        };
+      }
+
+      function renderChart(category = 'revenue') {
+        const d = prepareData(category);
+
+        chart = Highcharts.chart('topBottomChart', {
+          chart: {
+            type: 'column',
+            animation: true,
+          },
+          title: {
+            text: d.title,
+          },
+          subtitle: {
+            text: 'Top 5 (Green) vs Bottom 5 (Red)',
+          },
+          xAxis: {
+            categories: d.categories,
+            labels: {
+              rotation: -45,
+              style: {
+                fontSize: '12px',
+              },
+            },
+          },
+          credits: {
+            enabled: false,
+          },
+
+          exporting: {
+            enabled: false,
+          },
+
+          yAxis: {
+            title: {
+              text: d.unit,
+            },
+          },
+          tooltip: {
+            formatter: function () {
+              return `<b>${this.x}</b><br/>Value: ${this.y} ${d.unit}`;
+            },
+          },
+          legend: {
+            enabled: false,
+          },
+          plotOptions: {
+            column: {
+              borderRadius: 4,
+            },
+          },
+          series: [
+            {
+              name: category,
+              data: d.data,
+            },
+          ],
+        });
+      }
+
+      function updateChart(category, btn) {
+        const d = prepareData(category);
+
+        // Update active button UI
+        document.querySelectorAll('.controls button').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        chart.update(
+          {
+            title: {
+              text: d.title,
+            },
+            xAxis: {
+              categories: d.categories,
+            },
+            yAxis: {
+              title: {
+                text: d.unit,
+              },
+            },
+            tooltip: {
+              formatter: function () {
+                return `<b>${this.x}</b><br/>Value: ${this.y} ${d.unit}`;
+              },
+            },
+            series: [
+              {
+                name: category,
+                data: d.data,
+              },
+            ],
+          },
+          true,
+          true,
+        );
+      }
+
+      /* =========================
+              🚀 INIT
+      ========================= */
+
+      document.addEventListener('DOMContentLoaded', function () {
+        renderChart('revenue');
+      });
+    </script>
+  </body>
+</html>

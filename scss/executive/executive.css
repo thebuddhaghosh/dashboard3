@@ -1,0 +1,1113 @@
+.top-categories {
+  width: 100%;
+}
+
+.rating-wrapper {
+  display: flex;
+  gap: 1rem;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.rating-wrapper .stars {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.chart-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-change-section .heading-view {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.view-change-section .heading-view .title {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+.view-change-section .heading-view .right-side-view {
+  display: flex;
+  gap: 0.5rem;
+}
+.view-change-section .heading-view .right-side-view .btn {
+  padding: 0.375rem 0.75rem;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.7);
+}
+.view-change-section .heading-view .right-side-view .btn.active {
+  background-color: #5b61f0;
+  color: #ffffff;
+  border-color: #5b61f0;
+}
+
+.view-change-section .bg-header {
+  background-color: #1e293b;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 75px 1fr;
+  grid-template-areas: "header header" "sidebar main";
+  height: 100vh;
+  gap: 10px;
+  padding: 8px;
+  width: 100%;
+}
+
+.header {
+  grid-area: header;
+  grid-template-columns: auto 1fr auto;
+  position: sticky;
+  top: 8px;
+  z-index: 40;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  position: sticky;
+  top: 93px;
+  height: calc(100vh - 93px);
+}
+
+.main {
+  grid-area: main;
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  width: 100%;
+  overflow: auto;
+}
+
+.seprator {
+  width: 100%;
+  height: 1px;
+  background-color: #dee2e6;
+  margin: 26px 0;
+}
+
+.bg-tabbed-header {
+  background-color: #f1f4ff;
+}
+
+/* Header */
+.header {
+  grid-area: header;
+  grid-template-columns: auto 1fr auto;
+  display: grid;
+  background: #eef3ff;
+  border-radius: 16px;
+  align-items: center;
+  padding: 0 24px;
+  max-height: 72px;
+}
+.header__left {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.header__search .search-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+.header__search .search-wrap .search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+}
+.header__search .search-wrap input {
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+  margin: 0 auto;
+  padding-left: 45px;
+}
+.header .topbar-actions .date {
+  font-size: 0.875rem;
+  color: #1e293b;
+}
+.header .topbar-actions .profile {
+  cursor: pointer;
+}
+.header .topbar-actions .profile .avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ddd;
+}
+.header .topbar-actions .profile .profile-dropdown .dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: #1e293b;
+  padding: 6px 16px;
+}
+.header .topbar-actions .profile .profile-dropdown .dropdown-item.active {
+  background: #5b61f0;
+  color: #f1f4ff;
+}
+.header .topbar-actions .profile .profile-dropdown .dropdown-item i {
+  font-size: 0.75rem;
+}
+
+.sidebar {
+  width: 260px;
+  max-height: 100vh;
+  background: #f1f4ff;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 16px;
+}
+.sidebar .nav-link {
+  color: #1e293b;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+.sidebar .nav-link.active {
+  background: #5b61f0;
+  color: #f1f4ff;
+}
+
+.download-app-card {
+  background: #5b61f0;
+  color: #f1f4ff;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.download-app-card::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: -60px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.15);
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 50%;
+}
+.download-app-card::before {
+  content: "";
+  position: absolute;
+  left: -40px;
+  bottom: -80px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(219deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 50%;
+}
+.download-app-card .app-ico {
+  border-radius: 14px;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+}
+.download-app-card .card-title {
+  color: #f1f4ff;
+}
+
+.card {
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+}
+.card .card-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.card .card-header .card-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: #000000;
+}
+.card .card-body {
+  padding: 16px;
+}
+.card .card-body .card-title {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.card .card-body .card-text {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 600;
+}
+.card .card-body .card-text strong {
+  font-size: 22px;
+  font-weight: 800;
+  color: #000000;
+}
+.card .card-body .target {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 400;
+}
+.card .card-body .target span {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.bg-booklet .card-body .card-text {
+  font-size: 12px;
+  font-weight: 400;
+}
+.bg-booklet .card-body .card-text span {
+  font-weight: 500;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-bg-0 {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.dark-bg-1 {
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+.dark-bg-2 {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.dark-bg-3 {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.dark-bg-4 {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.dark-bg-5 {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark-bg-6 {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.dark-bg-7 {
+  background-color: rgba(0, 0, 0, 0.07);
+}
+
+.dark-bg-8 {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.dark-bg-9 {
+  background-color: rgba(0, 0, 0, 0.09);
+}
+
+.dark-bg-10 {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.dark-bg-11 {
+  background-color: rgba(0, 0, 0, 0.11);
+}
+
+.dark-bg-12 {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.dark-bg-13 {
+  background-color: rgba(0, 0, 0, 0.13);
+}
+
+.dark-bg-14 {
+  background-color: rgba(0, 0, 0, 0.14);
+}
+
+.dark-bg-15 {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.dark-bg-16 {
+  background-color: rgba(0, 0, 0, 0.16);
+}
+
+.dark-bg-17 {
+  background-color: rgba(0, 0, 0, 0.17);
+}
+
+.dark-bg-18 {
+  background-color: rgba(0, 0, 0, 0.18);
+}
+
+.dark-bg-19 {
+  background-color: rgba(0, 0, 0, 0.19);
+}
+
+.dark-bg-20 {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.dark-bg-21 {
+  background-color: rgba(0, 0, 0, 0.21);
+}
+
+.dark-bg-22 {
+  background-color: rgba(0, 0, 0, 0.22);
+}
+
+.dark-bg-23 {
+  background-color: rgba(0, 0, 0, 0.23);
+}
+
+.dark-bg-24 {
+  background-color: rgba(0, 0, 0, 0.24);
+}
+
+.dark-bg-25 {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.dark-bg-26 {
+  background-color: rgba(0, 0, 0, 0.26);
+}
+
+.dark-bg-27 {
+  background-color: rgba(0, 0, 0, 0.27);
+}
+
+.dark-bg-28 {
+  background-color: rgba(0, 0, 0, 0.28);
+}
+
+.dark-bg-29 {
+  background-color: rgba(0, 0, 0, 0.29);
+}
+
+.dark-bg-30 {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.dark-bg-31 {
+  background-color: rgba(0, 0, 0, 0.31);
+}
+
+.dark-bg-32 {
+  background-color: rgba(0, 0, 0, 0.32);
+}
+
+.dark-bg-33 {
+  background-color: rgba(0, 0, 0, 0.33);
+}
+
+.dark-bg-34 {
+  background-color: rgba(0, 0, 0, 0.34);
+}
+
+.dark-bg-35 {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.dark-bg-36 {
+  background-color: rgba(0, 0, 0, 0.36);
+}
+
+.dark-bg-37 {
+  background-color: rgba(0, 0, 0, 0.37);
+}
+
+.dark-bg-38 {
+  background-color: rgba(0, 0, 0, 0.38);
+}
+
+.dark-bg-39 {
+  background-color: rgba(0, 0, 0, 0.39);
+}
+
+.dark-bg-40 {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.dark-bg-41 {
+  background-color: rgba(0, 0, 0, 0.41);
+}
+
+.dark-bg-42 {
+  background-color: rgba(0, 0, 0, 0.42);
+}
+
+.dark-bg-43 {
+  background-color: rgba(0, 0, 0, 0.43);
+}
+
+.dark-bg-44 {
+  background-color: rgba(0, 0, 0, 0.44);
+}
+
+.dark-bg-45 {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.dark-bg-46 {
+  background-color: rgba(0, 0, 0, 0.46);
+}
+
+.dark-bg-47 {
+  background-color: rgba(0, 0, 0, 0.47);
+}
+
+.dark-bg-48 {
+  background-color: rgba(0, 0, 0, 0.48);
+}
+
+.dark-bg-49 {
+  background-color: rgba(0, 0, 0, 0.49);
+}
+
+.dark-bg-50 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dark-bg-51 {
+  background-color: rgba(0, 0, 0, 0.51);
+}
+
+.dark-bg-52 {
+  background-color: rgba(0, 0, 0, 0.52);
+}
+
+.dark-bg-53 {
+  background-color: rgba(0, 0, 0, 0.53);
+}
+
+.dark-bg-54 {
+  background-color: rgba(0, 0, 0, 0.54);
+}
+
+.dark-bg-55 {
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+.dark-bg-56 {
+  background-color: rgba(0, 0, 0, 0.56);
+}
+
+.dark-bg-57 {
+  background-color: rgba(0, 0, 0, 0.57);
+}
+
+.dark-bg-58 {
+  background-color: rgba(0, 0, 0, 0.58);
+}
+
+.dark-bg-59 {
+  background-color: rgba(0, 0, 0, 0.59);
+}
+
+.dark-bg-60 {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.dark-bg-61 {
+  background-color: rgba(0, 0, 0, 0.61);
+}
+
+.dark-bg-62 {
+  background-color: rgba(0, 0, 0, 0.62);
+}
+
+.dark-bg-63 {
+  background-color: rgba(0, 0, 0, 0.63);
+}
+
+.dark-bg-64 {
+  background-color: rgba(0, 0, 0, 0.64);
+}
+
+.dark-bg-65 {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+.dark-bg-66 {
+  background-color: rgba(0, 0, 0, 0.66);
+}
+
+.dark-bg-67 {
+  background-color: rgba(0, 0, 0, 0.67);
+}
+
+.dark-bg-68 {
+  background-color: rgba(0, 0, 0, 0.68);
+}
+
+.dark-bg-69 {
+  background-color: rgba(0, 0, 0, 0.69);
+}
+
+.dark-bg-70 {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dark-bg-71 {
+  background-color: rgba(0, 0, 0, 0.71);
+}
+
+.dark-bg-72 {
+  background-color: rgba(0, 0, 0, 0.72);
+}
+
+.dark-bg-73 {
+  background-color: rgba(0, 0, 0, 0.73);
+}
+
+.dark-bg-74 {
+  background-color: rgba(0, 0, 0, 0.74);
+}
+
+.dark-bg-75 {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.dark-bg-76 {
+  background-color: rgba(0, 0, 0, 0.76);
+}
+
+.dark-bg-77 {
+  background-color: rgba(0, 0, 0, 0.77);
+}
+
+.dark-bg-78 {
+  background-color: rgba(0, 0, 0, 0.78);
+}
+
+.dark-bg-79 {
+  background-color: rgba(0, 0, 0, 0.79);
+}
+
+.dark-bg-80 {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dark-bg-81 {
+  background-color: rgba(0, 0, 0, 0.81);
+}
+
+.dark-bg-82 {
+  background-color: rgba(0, 0, 0, 0.82);
+}
+
+.dark-bg-83 {
+  background-color: rgba(0, 0, 0, 0.83);
+}
+
+.dark-bg-84 {
+  background-color: rgba(0, 0, 0, 0.84);
+}
+
+.dark-bg-85 {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.dark-bg-86 {
+  background-color: rgba(0, 0, 0, 0.86);
+}
+
+.dark-bg-87 {
+  background-color: rgba(0, 0, 0, 0.87);
+}
+
+.dark-bg-88 {
+  background-color: rgba(0, 0, 0, 0.88);
+}
+
+.dark-bg-89 {
+  background-color: rgba(0, 0, 0, 0.89);
+}
+
+.dark-bg-90 {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.dark-bg-91 {
+  background-color: rgba(0, 0, 0, 0.91);
+}
+
+.dark-bg-92 {
+  background-color: rgba(0, 0, 0, 0.92);
+}
+
+.dark-bg-93 {
+  background-color: rgba(0, 0, 0, 0.93);
+}
+
+.dark-bg-94 {
+  background-color: rgba(0, 0, 0, 0.94);
+}
+
+.dark-bg-95 {
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+.dark-bg-96 {
+  background-color: rgba(0, 0, 0, 0.96);
+}
+
+.dark-bg-97 {
+  background-color: rgba(0, 0, 0, 0.97);
+}
+
+.dark-bg-98 {
+  background-color: rgba(0, 0, 0, 0.98);
+}
+
+.dark-bg-99 {
+  background-color: rgba(0, 0, 0, 0.99);
+}
+
+.dark-bg-100 {
+  background-color: rgb(0, 0, 0);
+}
+
+.dark-text-0 {
+  color: rgba(0, 0, 0, 0);
+}
+
+.dark-text-1 {
+  color: rgba(0, 0, 0, 0.01);
+}
+
+.dark-text-2 {
+  color: rgba(0, 0, 0, 0.02);
+}
+
+.dark-text-3 {
+  color: rgba(0, 0, 0, 0.03);
+}
+
+.dark-text-4 {
+  color: rgba(0, 0, 0, 0.04);
+}
+
+.dark-text-5 {
+  color: rgba(0, 0, 0, 0.05);
+}
+
+.dark-text-6 {
+  color: rgba(0, 0, 0, 0.06);
+}
+
+.dark-text-7 {
+  color: rgba(0, 0, 0, 0.07);
+}
+
+.dark-text-8 {
+  color: rgba(0, 0, 0, 0.08);
+}
+
+.dark-text-9 {
+  color: rgba(0, 0, 0, 0.09);
+}
+
+.dark-text-10 {
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.dark-text-11 {
+  color: rgba(0, 0, 0, 0.11);
+}
+
+.dark-text-12 {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+.dark-text-13 {
+  color: rgba(0, 0, 0, 0.13);
+}
+
+.dark-text-14 {
+  color: rgba(0, 0, 0, 0.14);
+}
+
+.dark-text-15 {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+.dark-text-16 {
+  color: rgba(0, 0, 0, 0.16);
+}
+
+.dark-text-17 {
+  color: rgba(0, 0, 0, 0.17);
+}
+
+.dark-text-18 {
+  color: rgba(0, 0, 0, 0.18);
+}
+
+.dark-text-19 {
+  color: rgba(0, 0, 0, 0.19);
+}
+
+.dark-text-20 {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.dark-text-21 {
+  color: rgba(0, 0, 0, 0.21);
+}
+
+.dark-text-22 {
+  color: rgba(0, 0, 0, 0.22);
+}
+
+.dark-text-23 {
+  color: rgba(0, 0, 0, 0.23);
+}
+
+.dark-text-24 {
+  color: rgba(0, 0, 0, 0.24);
+}
+
+.dark-text-25 {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.dark-text-26 {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.dark-text-27 {
+  color: rgba(0, 0, 0, 0.27);
+}
+
+.dark-text-28 {
+  color: rgba(0, 0, 0, 0.28);
+}
+
+.dark-text-29 {
+  color: rgba(0, 0, 0, 0.29);
+}
+
+.dark-text-30 {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.dark-text-31 {
+  color: rgba(0, 0, 0, 0.31);
+}
+
+.dark-text-32 {
+  color: rgba(0, 0, 0, 0.32);
+}
+
+.dark-text-33 {
+  color: rgba(0, 0, 0, 0.33);
+}
+
+.dark-text-34 {
+  color: rgba(0, 0, 0, 0.34);
+}
+
+.dark-text-35 {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.dark-text-36 {
+  color: rgba(0, 0, 0, 0.36);
+}
+
+.dark-text-37 {
+  color: rgba(0, 0, 0, 0.37);
+}
+
+.dark-text-38 {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.dark-text-39 {
+  color: rgba(0, 0, 0, 0.39);
+}
+
+.dark-text-40 {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.dark-text-41 {
+  color: rgba(0, 0, 0, 0.41);
+}
+
+.dark-text-42 {
+  color: rgba(0, 0, 0, 0.42);
+}
+
+.dark-text-43 {
+  color: rgba(0, 0, 0, 0.43);
+}
+
+.dark-text-44 {
+  color: rgba(0, 0, 0, 0.44);
+}
+
+.dark-text-45 {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.dark-text-46 {
+  color: rgba(0, 0, 0, 0.46);
+}
+
+.dark-text-47 {
+  color: rgba(0, 0, 0, 0.47);
+}
+
+.dark-text-48 {
+  color: rgba(0, 0, 0, 0.48);
+}
+
+.dark-text-49 {
+  color: rgba(0, 0, 0, 0.49);
+}
+
+.dark-text-50 {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.dark-text-51 {
+  color: rgba(0, 0, 0, 0.51);
+}
+
+.dark-text-52 {
+  color: rgba(0, 0, 0, 0.52);
+}
+
+.dark-text-53 {
+  color: rgba(0, 0, 0, 0.53);
+}
+
+.dark-text-54 {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.dark-text-55 {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.dark-text-56 {
+  color: rgba(0, 0, 0, 0.56);
+}
+
+.dark-text-57 {
+  color: rgba(0, 0, 0, 0.57);
+}
+
+.dark-text-58 {
+  color: rgba(0, 0, 0, 0.58);
+}
+
+.dark-text-59 {
+  color: rgba(0, 0, 0, 0.59);
+}
+
+.dark-text-60 {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.dark-text-61 {
+  color: rgba(0, 0, 0, 0.61);
+}
+
+.dark-text-62 {
+  color: rgba(0, 0, 0, 0.62);
+}
+
+.dark-text-63 {
+  color: rgba(0, 0, 0, 0.63);
+}
+
+.dark-text-64 {
+  color: rgba(0, 0, 0, 0.64);
+}
+
+.dark-text-65 {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.dark-text-66 {
+  color: rgba(0, 0, 0, 0.66);
+}
+
+.dark-text-67 {
+  color: rgba(0, 0, 0, 0.67);
+}
+
+.dark-text-68 {
+  color: rgba(0, 0, 0, 0.68);
+}
+
+.dark-text-69 {
+  color: rgba(0, 0, 0, 0.69);
+}
+
+.dark-text-70 {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.dark-text-71 {
+  color: rgba(0, 0, 0, 0.71);
+}
+
+.dark-text-72 {
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.dark-text-73 {
+  color: rgba(0, 0, 0, 0.73);
+}
+
+.dark-text-74 {
+  color: rgba(0, 0, 0, 0.74);
+}
+
+.dark-text-75 {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.dark-text-76 {
+  color: rgba(0, 0, 0, 0.76);
+}
+
+.dark-text-77 {
+  color: rgba(0, 0, 0, 0.77);
+}
+
+.dark-text-78 {
+  color: rgba(0, 0, 0, 0.78);
+}
+
+.dark-text-79 {
+  color: rgba(0, 0, 0, 0.79);
+}
+
+.dark-text-80 {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.dark-text-81 {
+  color: rgba(0, 0, 0, 0.81);
+}
+
+.dark-text-82 {
+  color: rgba(0, 0, 0, 0.82);
+}
+
+.dark-text-83 {
+  color: rgba(0, 0, 0, 0.83);
+}
+
+.dark-text-84 {
+  color: rgba(0, 0, 0, 0.84);
+}
+
+.dark-text-85 {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.dark-text-86 {
+  color: rgba(0, 0, 0, 0.86);
+}
+
+.dark-text-87 {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.dark-text-88 {
+  color: rgba(0, 0, 0, 0.88);
+}
+
+.dark-text-89 {
+  color: rgba(0, 0, 0, 0.89);
+}
+
+.dark-text-90 {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.dark-text-91 {
+  color: rgba(0, 0, 0, 0.91);
+}
+
+.dark-text-92 {
+  color: rgba(0, 0, 0, 0.92);
+}
+
+.dark-text-93 {
+  color: rgba(0, 0, 0, 0.93);
+}
+
+.dark-text-94 {
+  color: rgba(0, 0, 0, 0.94);
+}
+
+.dark-text-95 {
+  color: rgba(0, 0, 0, 0.95);
+}
+
+.dark-text-96 {
+  color: rgba(0, 0, 0, 0.96);
+}
+
+.dark-text-97 {
+  color: rgba(0, 0, 0, 0.97);
+}
+
+.dark-text-98 {
+  color: rgba(0, 0, 0, 0.98);
+}
+
+.dark-text-99 {
+  color: rgba(0, 0, 0, 0.99);
+}
+
+.dark-text-100 {
+  color: rgb(0, 0, 0);
+}
+
+.seprator {
+  width: 100%;
+  height: 1px;
+  margin: 8px 0;
+}
+
+.grad-white {
+  background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.bg-booklet {
+  background: rgb(0, 59, 153);
+  background: linear-gradient(180deg, rgb(0, 98, 255) 0%, rgb(0, 59, 153) 100%);
+}
+
+.executive-layout .top-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+.executive-layout .gran-view {
+  font-size: 14px;
+}/*# sourceMappingURL=executive.css.map */

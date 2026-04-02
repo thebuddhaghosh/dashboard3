@@ -7,8 +7,9 @@
 }
 
 @mixin card {
-  background: $light;
+  background: $white;
   border-radius: $radius-md;
+  border: 1px solid $border-color;
   box-shadow: $shadow-sm;
 }
 

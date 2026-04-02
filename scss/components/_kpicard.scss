@@ -1,0 +1,74 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+.kpi-card {
+  &.card {
+    position: relative;
+    border: 1px dashed;
+    border-color: $border-color;
+    .kpi-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 26px;
+      color: $dark;
+      opacity: 0.8;
+    }
+    .card-body {
+      position: absolute;
+      background-color: #fff;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -20px;
+      padding: 6px 12px;
+      max-width: 90%;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid orange;
+      border-radius: 10px;
+      .kpi-value {
+        font-size: 15px;
+        font-weight: 600;
+        color: $dark;
+        small {
+          display: inline-block;
+          font-weight: 400;
+        }
+      }
+      .grade {
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        @include place-center;
+        font-size: 15px;
+        font-weight: 600;
+        &.a {
+          background-color: $success;
+          color: #fff;
+        }
+        &.b {
+          background-color: $warning;
+          color: #fff;
+        }
+        &.c {
+          background-color: $danger;
+          color: #fff;
+        }
+        &.d {
+          background-color: $dark;
+          color: #fff;
+        }
+        &.e {
+          background-color: $dark;
+          color: #fff;
+        }
+        &.na {
+          background-color: $dark;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
